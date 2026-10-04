@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#15803d">
+<meta name="theme-color" content="#ffffff">
 <title>Bible Study Group</title>
 <style>
 :root{
@@ -17,10 +17,10 @@ body{margin:0;color:var(--text);
   font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,sans-serif;
   overscroll-behavior-y:none;
   background:#fdf8f8;}
-/* ── GREEN RECTANGLE at top ── */
 .top-green-bar{
-  position:fixed;top:0;left:0;right:0;height:150px;z-index:0;
-  background:#16a34a;
+  position:fixed;top:0;left:0;right:0;height:60px;z-index:0;
+  background:#ffffff;
+  border-bottom:1px solid #fecaca;
 }
 h1,h2,h3{margin:0 0 10px;line-height:1.25}
 h1{font-size:22px}h2{font-size:19px}h3{font-size:16px}
@@ -47,7 +47,8 @@ p{margin:0 0 10px}
 .doc-preview-modal .modal-box{max-width:1000px;width:100%;max-height:95vh;height:auto;display:flex;flex-direction:column;padding:16px;}
 @media(max-width:600px){.doc-preview-modal{padding:0;}.doc-preview-modal .modal-box{border-radius:18px 18px 0 0;height:100dvh;max-height:100dvh;margin-top:auto;}}
 
-.auth-wrap{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px;
+.auth-wrap{min-height:100dvh;display:flex;align-items:center;justify-content:center;
+  padding:80px 20px 40px;
   background:radial-gradient(circle at 50% 0%,#ffffff 0%,#fdf8f8 60%);}
 .auth-card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);
   border-radius:18px;padding:24px 22px 26px;box-shadow:0 20px 50px rgba(220,38,38,.06);}
@@ -88,23 +89,10 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
   border:1px dashed var(--line);font-size:12.5px;color:var(--muted);text-align:center;}
 .hint b{color:var(--accent)}
 
+.lang-select{flex:0 0 auto;width:auto;min-width:105px;margin:0;padding:7px 28px 7px 9px;
+  border:1px solid rgba(0,0,0,.18);border-radius:8px;background:rgba(255,255,255,.95);
+  color:#222;font-size:12px;font-weight:600;}
 
-/* ── LANGUAGE SELECTOR ── */
-.lang-select{
-  flex:0 0 auto;
-  width:auto;
-  min-width:105px;
-  margin:0;
-  padding:7px 28px 7px 9px;
-  border:1px solid rgba(0,0,0,.18);
-  border-radius:8px;
-  background:rgba(255,255,255,.95);
-  color:#222;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* ── HEADER ── */
 .app-header{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;
   padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));
   background:transparent;border-bottom:none;}
@@ -114,7 +102,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .app-header .title:active{opacity:.85}
 
 .avatar{flex:0 0 38px;height:38px;border-radius:50%;background:#ffffff;
-  border:2px solid #ffffff;display:grid;place-items:center;color:var(--green);
+  border:2px solid #e5e7eb;display:grid;place-items:center;color:var(--green);
   font-weight:700;font-size:18px;cursor:pointer;overflow:hidden;padding:0;transition:transform .12s;
   box-shadow:0 2px 6px rgba(0,0,0,.15);}
 .avatar:hover{transform:scale(1.05)}
@@ -238,71 +226,40 @@ input[type=file]{display:none}
 .folder.activity-folder .folder-name{font-size:13.5px;color:#374151;}
 .folder.activity-folder .folder-count{font-size:11px;padding:1px 8px;}
 
-.q-admin-box{
-  border:2px solid var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;
-  background:#fff7f7;display:flex;align-items:flex-start;gap:8px;
-}
-.q-admin-box .q-badge{
-  flex:0 0 auto;min-width:38px;padding:4px 8px;border-radius:6px;
-  background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;
-  text-align:center;line-height:1.2;margin-top:2px;
-}
-.q-admin-box .q-input{
-  flex:1;margin:0;padding:9px 11px;font-size:14px;
-  background:#ffffff;border:1px solid var(--line);
-}
+.q-admin-box{border:2px solid var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;
+  background:#fff7f7;display:flex;align-items:flex-start;gap:8px;}
+.q-admin-box .q-badge{flex:0 0 auto;min-width:38px;padding:4px 8px;border-radius:6px;
+  background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;text-align:center;line-height:1.2;margin-top:2px;}
+.q-admin-box .q-input{flex:1;margin:0;padding:9px 11px;font-size:14px;background:#ffffff;border:1px solid var(--line);}
 .q-admin-box .q-del{flex:0 0 auto;margin-top:2px;}
 
 .q-card{border:1px solid #e5e7eb;border-radius:12px;margin:12px 0;background:#ffffff;overflow:hidden;}
-.q-card-question{
-  border-left:4px solid var(--accent);padding:12px 14px;background:#fff7f7;
-  display:flex;align-items:flex-start;gap:10px;
-}
-.q-card-question .q-badge{
-  flex:0 0 auto;min-width:38px;padding:5px 9px;border-radius:7px;
-  background:var(--accent);color:#fff;font-size:12px;font-weight:700;
-  text-align:center;line-height:1.2;
-}
-.q-card-question .q-text{
-  flex:1;font-size:14.5px;font-weight:600;color:var(--text);
-  line-height:1.45;word-break:break-word;padding-top:3px;
-}
+.q-card-question{border-left:4px solid var(--accent);padding:12px 14px;background:#fff7f7;
+  display:flex;align-items:flex-start;gap:10px;}
+.q-card-question .q-badge{flex:0 0 auto;min-width:38px;padding:5px 9px;border-radius:7px;
+  background:var(--accent);color:#fff;font-size:12px;font-weight:700;text-align:center;line-height:1.2;}
+.q-card-question .q-text{flex:1;font-size:14.5px;font-weight:600;color:var(--text);
+  line-height:1.45;word-break:break-word;padding-top:3px;}
 .q-card-question .q-text.muted{color:var(--muted);font-style:italic;font-weight:400;}
 
-.q-answer-rect{
-  margin:0 12px 12px;
-  border:2px dashed #cbd5e1;border-radius:10px;padding:12px 14px;
-  background:#f8fafc;cursor:pointer;
-  transition:border-color .15s, background .15s, transform .1s;user-select:none;
-}
+.q-answer-rect{margin:0 12px 12px;border:2px dashed #cbd5e1;border-radius:10px;padding:12px 14px;
+  background:#f8fafc;cursor:pointer;transition:border-color .15s, background .15s, transform .1s;user-select:none;}
 .q-answer-rect:hover{border-color:var(--accent);background:#fff5f5}
 .q-answer-rect:active{transform:scale(.99)}
 .q-answer-rect.has-answer{border-style:solid;border-color:#bbf7d0;background:#f0fdf4;}
 .q-answer-rect.open{border-style:solid;border-color:var(--accent);background:#fffefe;cursor:default;}
 .q-answer-rect.open:hover{background:#fffefe}
-.q-answer-hint{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-  font-size:13px;color:var(--muted);font-weight:500;
-}
+.q-answer-hint{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-weight:500;}
 .q-answer-hint .icon{font-size:18px;}
 .q-answer-hint .label{flex:1;min-width:0;}
 .q-answer-rect.has-answer .q-answer-hint .label{color:#166534;font-weight:600;}
 .q-answer-rect.has-answer .q-answer-hint .icon{color:var(--ok);}
-.q-answer-hint .count-badge{
-  font-size:11px;padding:2px 8px;border-radius:999px;
-  background:#e2e8f0;color:#475569;font-weight:700;
-}
+.q-answer-hint .count-badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#e2e8f0;color:#475569;font-weight:700;}
 .q-answer-rect.has-answer .q-answer-hint .count-badge{background:#dcfce7;color:#166534;}
-.q-answer-preview{
-  margin-top:6px;font-size:13.5px;color:#166534;line-height:1.5;font-style:italic;
-  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;
-  -webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-word;
-}
+.q-answer-preview{margin-top:6px;font-size:13.5px;color:#166534;line-height:1.5;font-style:italic;
+  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-word;}
 .q-answer-open-area{margin-top:12px;padding-top:12px;border-top:1px dashed #cbd5e1;}
-.q-answer-open-area textarea{
-  background:#ffffff;min-height:100px;font-size:14.5px;
-  border:2px solid var(--accent);border-radius:9px;
-}
+.q-answer-open-area textarea{background:#ffffff;min-height:100px;font-size:14.5px;border:2px solid var(--accent);border-radius:9px;}
 .q-answer-open-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center;}
 .q-answers-list{margin:0 12px 12px;padding-top:10px;border-top:1px dashed #e5e7eb;}
 .q-answers-list .q-list-label{font-size:12px;color:#718096;font-weight:700;margin-bottom:6px;}
@@ -322,10 +279,8 @@ input[type=file]{display:none}
 .finished-card-body{padding:8px 14px 14px;}
 .finished-q{border:2px solid #d1fae5;background:#ffffff;border-radius:10px;padding:12px 14px;margin:10px 0;}
 .finished-q .fq-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
-.finished-q .fq-num{
-  flex:0 0 auto;min-width:38px;padding:5px 9px;border-radius:7px;
-  background:#16a34a;color:#fff;font-size:12px;font-weight:700;text-align:center;line-height:1.2;
-}
+.finished-q .fq-num{flex:0 0 auto;min-width:38px;padding:5px 9px;border-radius:7px;
+  background:#16a34a;color:#fff;font-size:12px;font-weight:700;text-align:center;line-height:1.2;}
 .finished-q .fq-text{flex:1;font-size:14.5px;font-weight:600;color:#14532d;line-height:1.4;word-break:break-word;padding-top:2px;}
 .finished-q .fq-answers{border-top:1px dashed #d1fae5;padding-top:10px;margin-top:4px;}
 .finished-q .fq-answer{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed #f0f0f0;}
@@ -341,294 +296,149 @@ input[type=file]{display:none}
 .activity-meta{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:2px;}
 .activity-meta .creator-tag{color:#6b7280;}
 
-.group-name-chip{
-  display:inline-block;background:#166534;color:#fff;font-size:11px;font-weight:700;
-  padding:2px 8px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase;
-}
+.group-name-chip{display:inline-block;background:#166534;color:#fff;font-size:11px;font-weight:700;
+  padding:2px 8px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase;}
 
-.home-section-title{
-  font-size:15px;font-weight:700;color:var(--text);
-  display:flex;align-items:center;gap:8px;margin-bottom:10px;
-}
+.home-section-title{font-size:15px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:10px;}
 
-    body[dir="rtl"] .bible-modal-content, body[dir="rtl"] .bible-modal-content p { text-align: right; }
-    #rd-book { min-width: 0; }
+body[dir="rtl"] .bible-modal-content, body[dir="rtl"] .bible-modal-content p { text-align: right; }
+#rd-book { min-width: 0; }
 
-/* ===== MULTI-DEVICE RESPONSIVE SUPPORT ===== */
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+.app-header, main, .card, .section, .list, .row, .form-row { max-width: 100%; }
 
-/* Prevent horizontal scrolling on every screen size */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Flexible app/header areas */
-.app-header,
-main,
-.card,
-.section,
-.list,
-.row,
-.form-row {
-  max-width: 100%;
-}
-
-/* Phones: small screens */
 @media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .top-green-bar {
-    height: 115px;
-  }
-
-  .app-header {
-    padding: 10px 10px;
-    gap: 6px;
-  }
-
-  .app-header .title b {
-    font-size: 15px;
-  }
-
-  .app-header .title span {
-    font-size: 10px;
-  }
-
-  main {
-    width: 100%;
-    padding: 12px 10px calc(90px + env(safe-area-inset-bottom));
-  }
-
-  .auth-card {
-    width: calc(100vw - 24px);
-    max-width: none;
-  }
-
-  .btn {
-    min-height: 42px;
-  }
-
-  input, textarea, select {
-    min-height: 42px;
-    font-size: 16px; /* prevents iPhone/Android browser zoom on focus */
-  }
-
-  .modal-overlay {
-    padding: 8px;
-  }
-
-  .modal-box {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .bible-modal .modal-box,
-  .doc-preview-modal .modal-box {
-    width: 100%;
-  }
-
-  /* Make long Bible text comfortable to read */
-  .bible-text,
-  .reader-content,
-  .chapter-content {
-    width: 100%;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  /* Buttons can wrap instead of overflowing */
-  .actions,
-  .toolbar,
-  .button-row {
-    flex-wrap: wrap;
-  }
-
-  .actions .btn,
-  .toolbar .btn {
-    max-width: 100%;
-  }
-
-  img, video, object, iframe {
-    max-width: 100%;
-  }
+  body { font-size: 14px; }
+  .top-green-bar { height: 50px; }
+  .app-header { padding: 10px 10px; gap: 6px; }
+  .app-header .title b { font-size: 15px; }
+  .app-header .title span { font-size: 10px; }
+  main { width: 100%; padding: 12px 10px calc(90px + env(safe-area-inset-bottom)); }
+  .auth-card { width: calc(100vw - 24px); max-width: none; }
+  .auth-wrap{ padding:65px 12px 30px; }
+  .btn { min-height: 42px; }
+  input, textarea, select { min-height: 42px; font-size: 16px; }
+  .modal-overlay { padding: 8px; }
+  .modal-box { width: 100%; max-width: 100%; }
+  .bible-modal .modal-box, .doc-preview-modal .modal-box { width: 100%; }
+  .bible-text, .reader-content, .chapter-content { width: 100%; max-width: 100%; overflow-wrap: anywhere; word-break: normal; }
+  .actions, .toolbar, .button-row { flex-wrap: wrap; }
+  .actions .btn, .toolbar .btn { max-width: 100%; }
+  img, video, object, iframe { max-width: 100%; }
 }
-
-/* Small phones */
 @media (max-width: 360px) {
-  main {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .app-header {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  h1 { font-size: 20px; }
-  h2 { font-size: 18px; }
-
-  .grid2 {
-    grid-template-columns: 1fr !important;
-  }
+  main { padding-left: 8px; padding-right: 8px; }
+  .app-header { padding-left: 8px; padding-right: 8px; }
+  h1 { font-size: 20px; } h2 { font-size: 18px; }
+  .grid2 { grid-template-columns: 1fr !important; }
 }
-
-/* Tablets: portrait and landscape */
 @media (min-width: 481px) and (max-width: 1024px) {
-  main {
-    width: 100%;
-    max-width: 900px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .auth-card {
-    max-width: 520px;
-  }
-
-  .bible-modal .modal-box {
-    width: min(92vw, 760px);
-  }
-
-  .doc-preview-modal .modal-box {
-    width: min(94vw, 1000px);
-  }
+  main { width: 100%; max-width: 900px; padding-left: 20px; padding-right: 20px; }
+  .auth-card { max-width: 520px; }
+  .bible-modal .modal-box { width: min(92vw, 760px); }
+  .doc-preview-modal .modal-box { width: min(94vw, 1000px); }
 }
-
-/* Desktop / laptop */
 @media (min-width: 1025px) {
-  main {
-    width: min(100% - 40px, 900px);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .app-header {
-    padding-left: max(16px, calc((100vw - 900px) / 2));
-    padding-right: max(16px, calc((100vw - 900px) / 2));
-  }
+  main { width: min(100% - 40px, 900px); margin-left: auto; margin-right: auto; }
+  .app-header { padding-left: max(16px, calc((100vw - 900px) / 2)); padding-right: max(16px, calc((100vw - 900px) / 2)); }
 }
-
-/* Very wide monitors */
-@media (min-width: 1440px) {
-  body {
-    font-size: 16px;
-  }
-
-  main {
-    max-width: 980px;
-  }
-}
-
-/* Landscape phones */
+@media (min-width: 1440px) { body { font-size: 16px; } main { max-width: 980px; } }
 @media (max-height: 500px) and (orientation: landscape) {
-  .top-green-bar {
-    height: 90px;
-  }
-
-  main {
-    padding-bottom: 30px;
-  }
-
-  .bible-modal .modal-box,
-  .doc-preview-modal .modal-box {
-    max-height: 96vh;
-    height: 96vh;
-  }
+  .top-green-bar { height: 45px; }
+  main { padding-bottom: 30px; }
+  .bible-modal .modal-box, .doc-preview-modal .modal-box { max-height: 96vh; height: 96vh; }
 }
-
-/* Safe areas for phones with notches/navigation bars */
 @supports (padding: max(0px)) {
-  body {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-
-  .app-header {
-    padding-top: max(10px, env(safe-area-inset-top));
-  }
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  .app-header { padding-top: max(10px, env(safe-area-inset-top)); }
 }
+button, .btn, select, input[type="radio"], input[type="checkbox"], a { touch-action: manipulation; }
+* { min-width: 0; }
+table { width: 100%; max-width: 100%; display: block; overflow-x: auto; }
+pre, code { max-width: 100%; overflow-x: auto; }
 
-/* Better touch experience */
-button,
-.btn,
-select,
-input[type="radio"],
-input[type="checkbox"],
-a {
-  touch-action: manipulation;
-}
+#firebase-status{position:fixed;top:calc(8px + env(safe-area-inset-top));right:8px;
+  z-index:200;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;
+  background:rgba(255,255,255,.95);color:#166534;border:1px solid #bbf7d0;box-shadow:0 2px 6px rgba(0,0,0,.1);
+  opacity:0;transition:opacity .3s;pointer-events:none;}
+#firebase-status.show{opacity:1}
+#firebase-status.err{color:#b91c1c;border-color:#fecaca;background:#fef2f2}
 
-/* Prevent fixed-width children from breaking the page */
-* {
-  min-width: 0;
-}
-
-table {
-  width: 100%;
-  max-width: 100%;
-  display: block;
-  overflow-x: auto;
-}
-
-pre, code {
-  max-width: 100%;
-  overflow-x: auto;
-}
-
+#loading-overlay{position:fixed;inset:0;z-index:500;background:#fdf8f8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
+#loading-overlay .logo{font-size:56px;}
+#loading-overlay .text{font-size:15px;color:#718096;font-weight:600;}
+#loading-overlay .spinner{width:36px;height:36px;border:3px solid #fecaca;border-top-color:#dc2626;border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin { to { transform: rotate(360deg); } }
 </style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes">
-<meta name="theme-color" content="#0b5d2a">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="manifest" href="manifest.json">
-
 </head>
 <body>
+<div id="loading-overlay">
+  <div class="logo">📖</div>
+  <div class="spinner"></div>
+  <div class="text">Connecting…</div>
+</div>
+<div id="firebase-status"></div>
 <div class="top-green-bar"></div>
 <div id="root"></div>
 <div id="modal-root"></div>
 
-<script>
-/* ══════════════════════════════════════════════════════════════
-   BIBLE STUDY GROUP — English only
-   ══════════════════════════════════════════════════════════════ */
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, onValue, set, update }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getAuth, signInAnonymously, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBBp8no8yIhSzSYNEm4ImxrAS1fkmEO2YE",
+  authDomain: "biblestudygroup-e2e95.firebaseapp.com",
+  databaseURL: "https://biblestudygroup-e2e95-default-rtdb.firebaseio.com/",
+  projectId: "biblestudygroup-e2e95",
+  storageBucket: "biblestudygroup-e2e95.firebasestorage.app",
+  messagingSenderId: "241966742587",
+  appId: "1:241966742587:web:30e7cead67b269d21bf01e"
+};
+
+const fbApp  = initializeApp(firebaseConfig);
+const fbDB   = getDatabase(fbApp);
+const fbAuth = getAuth(fbApp);
+
+function showSyncBadge(msg, isError){
+  const el = document.getElementById('firebase-status');
+  if(!el) return;
+  el.textContent = msg;
+  el.classList.toggle('err', !!isError);
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove('show'), 1800);
+}
+window.showSyncBadge = showSyncBadge;
 
 /* ══════════════════════════════════════════════════════════════
-   MULTI-LANGUAGE UI — English / Afaan Oromoo / Amharic
-   The existing app remains unchanged; this layer translates UI text.
+   MULTI-LANGUAGE UI
    ══════════════════════════════════════════════════════════════ */
 const LANG_KEY = 'bsg-language-v1';
 let currentLang = localStorage.getItem(LANG_KEY) || 'en';
 
 const LANG = {
   en: {
-    'Bible Study Group':'Bible Study Group',
-    'Read · Share · Grow together':'Read · Share · Grow together',
-    'Log in':'Log in','Sign up':'Sign up','Change password':'Change password',
-    'Full name':'Full name','Password':'Password','Old password':'Old password',
-    'New password':'New password','Confirm password':'Confirm password',
-    'Confirm new password':'Confirm new password','Submit request':'Submit request',
-    'Change password':'Change password','Home':'Home','Reading':'Reading','Docs':'Docs',
-    'Alerts':'Alerts','Admin':'Admin','Members':'Members','Groups':'Groups',
-    'Total readings':'Total readings','Your readings':'Your readings',
-    'Finished Activities':'Finished Activities','Recent reading activity':'Recent reading activity',
-    'Log reading':'Log reading','Groups, Admins & Members':'Groups, Admins & Members',
-    'Quick actions':'Quick actions','📖 Log a reading':'📖 Log a reading',
-    'Documents':'Documents','Manage':'Manage','No groups created yet.':'No groups created yet.',
-    'Bible Reading':'Bible Reading','Log what you read':'Log what you read',
-    'Book':'Book','Chapter(s)':'Chapter(s)','Read':'Read','Note (optional)':'Note (optional)',
-    'Save Note':'Save Note','My Saved Notes':'My Saved Notes','Group reading log':'Group reading log',
-    'Documents':'Documents','All documents':'All documents','Upload a document':'Upload a document',
-    'Upload':'Upload','Notifications':'Notifications','Clear all notifications':'Clear all notifications',
-    'Select all':'Select all','Delete selected':'Delete selected','No notifications yet.':'No notifications yet.',
+    'Bible Study Group':'Bible Study Group','Read · Share · Grow together':'Read · Share · Grow together',
+    'Log in':'Log in','Sign up':'Sign up','Change password':'Change password','Full name':'Full name',
+    'Password':'Password','Old password':'Old password','New password':'New password',
+    'Confirm password':'Confirm password','Confirm new password':'Confirm new password',
+    'Submit request':'Submit request','Home':'Home','Reading':'Reading','Docs':'Docs','Alerts':'Alerts',
+    'Admin':'Admin','Members':'Members','Groups':'Groups','Total readings':'Total readings',
+    'Your readings':'Your readings','Finished Activities':'Finished Activities',
+    'Recent reading activity':'Recent reading activity','Log reading':'Log reading',
+    'Groups, Admins & Members':'Groups, Admins & Members','Quick actions':'Quick actions',
+    '📖 Log a reading':'📖 Log a reading','Documents':'Documents','Manage':'Manage',
+    'No groups created yet.':'No groups created yet.','Bible Reading':'Bible Reading',
+    'Log what you read':'Log what you read','Book':'Book','Chapter(s)':'Chapter(s)','Read':'Read',
+    'Note (optional)':'Note (optional)','Save Note':'Save Note','My Saved Notes':'My Saved Notes',
+    'Group reading log':'Group reading log','All documents':'All documents',
+    'Upload a document':'Upload a document','Upload':'Upload','Notifications':'Notifications',
+    'Clear all notifications':'Clear all notifications','Select all':'Select all',
+    'Delete selected':'Delete selected','No notifications yet.':'No notifications yet.',
     'Admin panel':'Admin panel','Pending requests':'Pending requests','Admin Profile':'Admin Profile',
     'Edit':'Edit','Change Photo & Name':'Change Photo & Name','Groups & Activities':'Groups & Activities',
     'Create Group':'Create Group','Sign-up requests':'Sign-up requests','waiting':'waiting',
@@ -639,48 +449,41 @@ const LANG = {
     'New here? Send a request to the admin.':'New here? Send a request to the admin.',
     'Change your password using your current one.':'Change your password using your current one.',
     'Every member can view, open, download, and edit these files.':'Every member can view, open, download, and edit these files.',
-    'Every member can view, open, download, and edit these files.':'Every member can view, open, download, and edit these files.',
-    'All documents':'All documents','No documents uploaded yet.':'No documents uploaded yet.',
-    'Tap to choose a file':'Tap to choose a file','Preview not available.':'Preview not available.',
-    'No readings logged yet. Be the first!':'No readings logged yet. Be the first!',
-    'You have no saved notes yet.':'You have no saved notes yet.',
-    'Tap the photo to change it':'Tap the photo to change it',
+    'No documents uploaded yet.':'No documents uploaded yet.','Tap to choose a file':'Tap to choose a file',
+    'Preview not available.':'Preview not available.','No readings logged yet. Be the first!':'No readings logged yet. Be the first!',
+    'You have no saved notes yet.':'You have no saved notes yet.','Tap the photo to change it':'Tap the photo to change it',
     'My Profile':'My Profile','Role':'Role','Administrator':'Administrator','Member':'Member',
     'Log out':'Log out','Upload Photo':'Upload Photo','Change Photo':'Change Photo',
-    'Remove':'Remove','Max 2 MB · Auto-resized to 200×200':'Max 2 MB · Auto-resized to 200×200',
-    'Members':'Members','reading':'reading','readings':'readings','joined':'joined',
-    'Requested':'Requested','Handled':'Handled','notification':'notification','notifications':'notifications',
+    'Max 2 MB · Auto-resized to 200×200':'Max 2 MB · Auto-resized to 200×200',
+    'reading':'reading','readings':'readings','joined':'joined','Requested':'Requested','Handled':'Handled',
+    'notification':'notification','notifications':'notifications',
     'No questions yet. Tap "+ Add Question" below.':'No questions yet. Tap "+ Add Question" below.',
-    'Add Question':'+ Add Question','Send & Publish':'Send & Publish',
-    'Question':'Question','Your answer':'Your answer','Save answer':'Save answer',
-    'Delete Answer':'Delete Answer','Remove your answer?':'Remove your answer?',
-    'Please write an answer before saving.':'Please write an answer before saving.',
+    'Add Question':'+ Add Question','Send & Publish':'Send & Publish','Question':'Question',
+    'Your answer':'Your answer','Save answer':'Save answer','Delete Answer':'Delete Answer',
+    'Remove your answer?':'Remove your answer?','Please write an answer before saving.':'Please write an answer before saving.',
     'Approve Request':'Approve Request','Reject Request':'Reject Request','Remove Member':'Remove Member',
-    'Change Photo & Name':'Change Photo & Name','New password must be different.':'New password must be different.',
-    'Please fill in all fields.':'Please fill in all fields.',
+    'New password must be different.':'New password must be different.','Please fill in all fields.':'Please fill in all fields.',
     'Name or password is incorrect.':'Name or password is incorrect.',
     'Your account is not approved yet.':'Your account is not approved yet.',
     'Your request is still waiting for admin approval.':'Your request is still waiting for admin approval.',
     'Request sent! The admin will review it shortly.':'Request sent! The admin will review it shortly.',
     'Password must be at least 4 characters.':'Password must be at least 4 characters.',
     'New password must be at least 4 characters.':'New password must be at least 4 characters.',
-    'Passwords do not match.':'Passwords do not match.',
-    'New passwords do not match.':'New passwords do not match.',
+    'Passwords do not match.':'Passwords do not match.','New passwords do not match.':'New passwords do not match.',
     'This full name is already registered.':'This full name is already registered.',
     'A sign-up request with this full name is already pending.':'A sign-up request with this full name is already pending.',
     'Password changed successfully. You can log in now.':'Password changed successfully. You can log in now.',
-    'Please choose an image file.':'Please choose an image file.',
-    'Image is larger than 2 MB.':'Image is larger than 2 MB.',
-    'Could not read that image.':'Could not read that image.',
-    'Storage is full.':'Storage is full.',
-    'Please enter your name.':'Please enter your name.',
-    'Three admins:':'Three admins:','Auto-fill Admin':'Auto-fill Admin',
-    'just now':'just now','ago':'ago','Loading…':'Loading…',
-    'Please enter a chapter number to read.':'Please enter a chapter number to read.','Please enter a valid chapter number.':'Please enter a valid chapter number.'
+    'Please choose an image file.':'Please choose an image file.','Image is larger than 2 MB.':'Image is larger than 2 MB.',
+    'Could not read that image.':'Could not read that image.','Storage is full.':'Storage is full.',
+    'Please enter your name.':'Please enter your name.','just now':'just now','Loading…':'Loading…',
+    'Please enter a chapter number to read.':'Please enter a chapter number to read.',
+    'Please enter a valid chapter number.':'Please enter a valid chapter number.',
+    'Please enter the chapter(s) you read.':'Please enter the chapter(s) you read.',
+    'Please write something before saving.':'Please write something before saving.',
+    'Note saved!':'Note saved!','Logged!':'Logged!'
   },
   om: {
-    'Bible Study Group':'Garee Qo’annoo Macaafa Qulqulluu',
-    'Read · Share · Grow together':'Dubbisaa · Qoodaa · Waliin guddadhaa',
+    'Bible Study Group':'Garee Qo’annoo Macaafa Qulqulluu','Read · Share · Grow together':'Dubbisaa · Qoodaa · Waliin guddadhaa',
     'Log in':'Seeni','Sign up':'Galmaa’i','Change password':'Jecha iccitii jijjiiri',
     'Full name':'Maqaa guutuu','Password':'Jecha iccitii','Old password':'Jecha iccitii durii',
     'New password':'Jecha iccitii haaraa','Confirm password':'Jecha iccitii mirkaneessi',
@@ -689,12 +492,12 @@ const LANG = {
     'Members':'Miseensota','Groups':'Gareewwan','Total readings':'Dubbisa waliigalaa',
     'Your readings':'Dubbisa kee','Finished Activities':'Hojiiwwan xumuraman',
     'Recent reading activity':'Sochii dubbisaa dhihoo','Log reading':'Dubbisa galmeessi',
-    'Groups, Admins & Members':'Gareewwan, Bulchitootaa fi Miseensota',
-    'Quick actions':'Gochaalee saffisaa','📖 Log a reading':'📖 Dubbisa galmeessi',
-    'Documents':'Galmeewwan','Manage':'Bulchi','No groups created yet.':'Gareen ammaaf hin uumamne.',
-    'Bible Reading':'Dubbisa Macaafa Qulqulluu','Log what you read':'Waan dubbiste galmeessi',
-    'Book':'Kitaaba','Chapter(s)':'Boqonnaa','Read':'Dubbisi','Note (optional)':'Yaada (filannoo)',
-    'Save Note':'Yaada olkaa’i','My Saved Notes':'Yaadota koo olkaa’aman','Group reading log':'Galmee dubbisa garee',
+    'Groups, Admins & Members':'Gareewwan, Bulchitootaa fi Miseensota','Quick actions':'Gochaalee saffisaa',
+    '📖 Log a reading':'📖 Dubbisa galmeessi','Documents':'Galmeewwan','Manage':'Bulchi',
+    'No groups created yet.':'Gareen ammaaf hin uumamne.','Bible Reading':'Dubbisa Macaafa Qulqulluu',
+    'Log what you read':'Waan dubbiste galmeessi','Book':'Kitaaba','Chapter(s)':'Boqonnaa',
+    'Read':'Dubbisi','Note (optional)':'Yaada (filannoo)','Save Note':'Yaada olkaa’i',
+    'My Saved Notes':'Yaadota koo olkaa’aman','Group reading log':'Galmee dubbisa garee',
     'Upload a document':'Galmee olkaa’i','Upload':'Olkaa’i','Notifications':'Beeksisawwan',
     'Clear all notifications':'Beeksisawwan hunda qulqulleessi','Select all':'Hunda filadhu',
     'Delete selected':'Filataman haqii','No notifications yet.':'Beeksisni ammaaf hin jiru.',
@@ -702,122 +505,101 @@ const LANG = {
     'Admin Profile':'Profaayila bulchaa','Edit':'Sirreessi','Change Photo & Name':'Suuraa fi maqaa jijjiiri',
     'Groups & Activities':'Gareewwanii fi hojiiwwan','Create Group':'+ Garee uumi',
     'Sign-up requests':'Gaaffii galmee','waiting':'eeggachaa jira','Approve':'Mirkaneessi',
-    'Reject':'Kufaa godhi','Remove':'Haqi','Cancel':'Haqi/Irra deebi’i','Save':'Olkaa’i',
-    'Close':'Cufi','Confirm':'Mirkaneessi','Delete':'Haqi','Download':'Buusi','Preview':'Duraa ilaali',
-    'Open':'Bani','Sent':'Ergame','Draft':'Qaboo','Answer':'Deebii','Answers':'Deebiiwwan',
+    'Reject':'Kufaa godhi','Remove':'Haqi','Cancel':'Haqi','Save':'Olkaa’i','Close':'Cufi',
+    'Confirm':'Mirkaneessi','Delete':'Haqi','Download':'Buusi','Preview':'Duraa ilaali','Open':'Bani',
+    'Sent':'Ergame','Draft':'Qaboo','Answer':'Deebii','Answers':'Deebiiwwan',
     'No pending requests.':'Gaaffiin eeggataa jiru hin jiru.',
-    'No groups yet. Tap "+ Create Group".':'Gareen hin jiru. “+ Garee uumi” cuqaasi.',
     'New here? Send a request to the admin.':'Haaraa dha? Gaaffii bulchaaf ergi.',
     'Change your password using your current one.':'Jecha iccitii amma qabdu fayyadamuun jijjiiri.',
     'Every member can view, open, download, and edit these files.':'Miseensi hundi faayilota kana ilaaluu, banuu, buusuu fi gulaaluu ni danda’a.',
-    'All documents':'Galmeewwan hunda','No documents uploaded yet.':'Galmeen ammaaf hin olkaa’amne.',
-    'Tap to choose a file':'Faayila filachuuf cuqaasi','Preview not available.':'Dura ilaalchi hin jiru.',
-    'No readings logged yet. Be the first!':'Dubbisni ammaaf hin galmoofne. Ati isa jalqabaa ta’i!',
-    'You have no saved notes yet.':'Yaadni olkaa’ame siif hin jiru.',
-    'Tap the photo to change it':'Suuraa jijjiiruuf cuqaasi','My Profile':'Profaayila koo',
-    'Role':'Gahee','Administrator':'Bulchaa','Member':'Miseensa','Log out':'Ba’i',
-    'Upload Photo':'Suuraa olkaa’i','Change Photo':'Suuraa jijjiiri',
+    'No documents uploaded yet.':'Galmeen ammaaf hin olkaa’amne.','Tap to choose a file':'Faayila filachuuf cuqaasi',
+    'Preview not available.':'Dura ilaalchi hin jiru.','No readings logged yet. Be the first!':'Dubbisni ammaaf hin galmoofne. Ati isa jalqabaa ta’i!',
+    'You have no saved notes yet.':'Yaadni olkaa’ame siif hin jiru.','Tap the photo to change it':'Suuraa jijjiiruuf cuqaasi',
+    'My Profile':'Profaayila koo','Role':'Gahee','Administrator':'Bulchaa','Member':'Miseensa',
+    'Log out':'Ba’i','Upload Photo':'Suuraa olkaa’i','Change Photo':'Suuraa jijjiiri',
     'Max 2 MB · Auto-resized to 200×200':'Hanga 2 MB · Ofumaan 200×200tti sirreeffama',
-    'reading':'dubbisa','readings':'dubbisawwan','joined':'makame',
-    'Requested':'Gaafatame','Handled':'Qindaa’e','notification':'beeksisa','notifications':'beeksisawwan',
+    'reading':'dubbisa','readings':'dubbisawwan','joined':'makame','Requested':'Gaafatame',
+    'Handled':'Qindaa’e','notification':'beeksisa','notifications':'beeksisawwan',
     'No questions yet. Tap "+ Add Question" below.':'Gaaffiin ammaaf hin jiru. “+ Gaaffii dabali” cuqaasi.',
-    'Add Question':'+ Gaaffii dabali','Send & Publish':'Ergi fi maxxansi',
-    'Question':'Gaaffii','Your answer':'Deebii kee','Save answer':'Deebii olkaa’i',
-    'Delete Answer':'Deebii haqii','Remove your answer?':'Deebii kee haquu?',
-    'Please write an answer before saving.':'Maaloo deebii barreessiitii olkaa’i.',
+    'Add Question':'+ Gaaffii dabali','Send & Publish':'Ergi fi maxxansi','Question':'Gaaffii',
+    'Your answer':'Deebii kee','Save answer':'Deebii olkaa’i','Delete Answer':'Deebii haqii',
+    'Remove your answer?':'Deebii kee haquu?','Please write an answer before saving.':'Maaloo deebii barreessiitii olkaa’i.',
     'Approve Request':'Gaaffii mirkaneessi','Reject Request':'Gaaffii kufaa godhi',
     'Remove Member':'Miseensa haqi','New password must be different.':'Jecha iccitii haaraan kan duraa irraa adda ta’uu qaba.',
-    'Please fill in all fields.':'Maaloo bakka hundaa guuti.',
-    'Name or password is incorrect.':'Maqaan ykn jechi iccitii sirrii miti.',
+    'Please fill in all fields.':'Maaloo bakka hundaa guuti.','Name or password is incorrect.':'Maqaan ykn jechi iccitii sirrii miti.',
     'Your account is not approved yet.':'Herregni kee ammaaf hin mirkanoofne.',
     'Your request is still waiting for admin approval.':'Gaaffiin kee amma illee eeyyama bulchaa eeggachaa jira.',
     'Request sent! The admin will review it shortly.':'Gaaffiin ergameera! Bulchaan yeroo gabaabaa keessatti ilaala.',
     'Password must be at least 4 characters.':'Jecha iccitii yoo xiqqaate qubee 4 qabaachuu qaba.',
     'New password must be at least 4 characters.':'Jechi iccitii haaraan yoo xiqqaate qubee 4 qabaachuu qaba.',
-    'Passwords do not match.':'Jechoonni iccitii wal hin siman.',
-    'New passwords do not match.':'Jechoonni iccitii haaraa wal hin siman.',
+    'Passwords do not match.':'Jechoonni iccitii wal hin siman.','New passwords do not match.':'Jechoonni iccitii haaraa wal hin siman.',
     'This full name is already registered.':'Maqaan guutuun kun duraan galmaa’eera.',
     'A sign-up request with this full name is already pending.':'Gaaffiin galmee maqaa guutuu kanaan duraan eeggachaa jira.',
     'Password changed successfully. You can log in now.':'Jechi iccitii milkaa’inaan jijjiirameera. Amma seenuu dandeessa.',
-    'Please choose an image file.':'Maaloo faayila suuraa filadhu.',
-    'Image is larger than 2 MB.':'Suuraan 2 MB caala.',
-    'Could not read that image.':'Suuraa sana dubbisuu hin dandeenye.',
-    'Storage is full.':'Kuufamni guutameera.',
-    'Please enter your name.':'Maaloo maqaa kee galchi.',
-    'Three admins:':'Bulchitoota sadii:','Auto-fill Admin':'Bulchaa ofumaan guuti',
-    'just now':'amma','Loading…':'Fe’amaa jira…',
-    'Please enter a chapter number to read.':'Maaloo lakkoofsa boqonnaa dubbistu galchi.','Please enter a valid chapter number.':'Maaloo lakkoofsa boqonnaa sirrii galchi.'
+    'Please choose an image file.':'Maaloo faayila suuraa filadhu.','Image is larger than 2 MB.':'Suuraan 2 MB caala.',
+    'Could not read that image.':'Suuraa sana dubbisuu hin dandeenye.','Storage is full.':'Kuufamni guutameera.',
+    'Please enter your name.':'Maaloo maqaa kee galchi.','just now':'amma','Loading…':'Fe’amaa jira…',
+    'Please enter a chapter number to read.':'Maaloo lakkoofsa boqonnaa dubbistu galchi.',
+    'Please enter a valid chapter number.':'Maaloo lakkoofsa boqonnaa sirrii galchi.',
+    'Please enter the chapter(s) you read.':'Maaloo boqonnaa dubbiste galchi.',
+    'Please write something before saving.':'Maaloo wanti tokko barreessiitii olkaa’i.',
+    'Note saved!':'Yaadni olkaa’ameera!','Logged!':'Galmeeffameera!'
   },
   am: {
-    'Bible Study Group':'የመጽሐፍ ቅዱስ ጥናት ቡድን',
-    'Read · Share · Grow together':'አንብብ · አካፍል · አብረን እናድግ',
+    'Bible Study Group':'የመጽሐፍ ቅዱስ ጥናት ቡድን','Read · Share · Grow together':'አንብብ · አካፍል · አብረን እናድግ',
     'Log in':'ግባ','Sign up':'ይመዝገቡ','Change password':'የይለፍ ቃል ቀይር',
     'Full name':'ሙሉ ስም','Password':'የይለፍ ቃል','Old password':'የቆየ የይለፍ ቃል',
     'New password':'አዲስ የይለፍ ቃል','Confirm password':'የይለፍ ቃል አረጋግጥ',
     'Confirm new password':'አዲሱን የይለፍ ቃል አረጋግጥ','Submit request':'ጥያቄ ላክ',
-    'Log in':'ግባ','Sign up':'ይመዝገቡ','Change password':'የይለፍ ቃል ቀይር',
     'Home':'መነሻ','Reading':'ንባብ','Docs':'ሰነዶች','Alerts':'ማሳወቂያዎች','Admin':'አስተዳዳሪ',
-    'Members':'አባላት','Groups':'ቡድኖች','Total readings':'ጠቅላላ ንባቦች',
-    'Your readings':'የእርስዎ ንባቦች','Finished Activities':'የተጠናቀቁ ተግባራት',
-    'Recent reading activity':'የቅርብ ጊዜ የንባብ እንቅስቃሴ','Log reading':'ንባብ መዝግብ',
-    'Groups, Admins & Members':'ቡድኖች፣ አስተዳዳሪዎች እና አባላት',
-    'Quick actions':'ፈጣን እርምጃዎች','📖 Log a reading':'📖 ንባብ መዝግብ',
-    'Documents':'ሰነዶች','Manage':'አስተዳድር','No groups created yet.':'እስካሁን ቡድን አልተፈጠረም።',
-    'Bible Reading':'የመጽሐፍ ቅዱስ ንባብ','Log what you read':'ያነበቡትን ይመዝግቡ',
-    'Book':'መጽሐፍ','Chapter(s)':'ምዕራፍ(ሎች)','Read':'አንብብ','Note (optional)':'ማስታወሻ (አማራጭ)',
-    'Save Note':'ማስታወሻ አስቀምጥ','My Saved Notes':'የተቀመጡ ማስታወሻዎቼ','Group reading log':'የቡድን ንባብ መዝገብ',
-    'Upload a document':'ሰነድ ይጫኑ','Upload':'ጫን','Notifications':'ማሳወቂያዎች',
-    'Clear all notifications':'ሁሉንም ማሳወቂያዎች አጥፋ','Select all':'ሁሉንም ምረጥ',
-    'Delete selected':'የተመረጡትን ሰርዝ','No notifications yet.':'እስካሁን ማሳወቂያ የለም።',
-    'Admin panel':'የአስተዳዳሪ ፓነል','Pending requests':'በመጠባበቅ ላይ ያሉ ጥያቄዎች',
-    'Admin Profile':'የአስተዳዳሪ መገለጫ','Edit':'አርትዕ','Change Photo & Name':'ፎቶ እና ስም ቀይር',
-    'Groups & Activities':'ቡድኖች እና ተግባራት','Create Group':'+ ቡድን ፍጠር',
-    'Sign-up requests':'የምዝገባ ጥያቄዎች','waiting':'በመጠባበቅ ላይ','Approve':'አጽድቅ',
-    'Reject':'ውድቅ አድርግ','Remove':'አስወግድ','Cancel':'ሰርዝ','Save':'አስቀምጥ',
-    'Close':'ዝጋ','Confirm':'አረጋግጥ','Delete':'ሰርዝ','Download':'አውርድ','Preview':'ቅድመ እይታ',
-    'Open':'ክፈት','Sent':'ተልኳል','Draft':'ረቂቅ','Answer':'መልስ','Answers':'መልሶች',
-    'No pending requests.':'በመጠባበቅ ላይ ጥያቄ የለም።',
-    'No groups yet. Tap "+ Create Group".':'እስካሁን ቡድን የለም። “+ ቡድን ፍጠር” ይጫኑ።',
+    'Members':'አባላት','Groups':'ቡድኖች','Total readings':'ጠቅላላ ንባቦች','Your readings':'የእርስዎ ንባቦች',
+    'Finished Activities':'የተጠናቀቁ ተግባራት','Recent reading activity':'የቅርብ ጊዜ የንባብ እንቅስቃሴ',
+    'Log reading':'ንባብ መዝግብ','Groups, Admins & Members':'ቡድኖች፣ አስተዳዳሪዎች እና አባላት',
+    'Quick actions':'ፈጣን እርምጃዎች','📖 Log a reading':'📖 ንባብ መዝግብ','Documents':'ሰነዶች',
+    'Manage':'አስተዳድር','No groups created yet.':'እስካሁን ቡድን አልተፈጠረም።','Bible Reading':'የመጽሐፍ ቅዱስ ንባብ',
+    'Log what you read':'ያነበቡትን ይመዝግቡ','Book':'መጽሐፍ','Chapter(s)':'ምዕራፍ(ሎች)','Read':'አንብብ',
+    'Note (optional)':'ማስታወሻ (አማራጭ)','Save Note':'ማስታወሻ አስቀምጥ','My Saved Notes':'የተቀመጡ ማስታወሻዎቼ',
+    'Group reading log':'የቡድን ንባብ መዝገብ','Upload a document':'ሰነድ ይጫኑ','Upload':'ጫን',
+    'Notifications':'ማሳወቂያዎች','Clear all notifications':'ሁሉንም ማሳወቂያዎች አጥፋ','Select all':'ሁሉንም ምረጥ',
+    'Delete selected':'የተመረጡትን ሰርዝ','No notifications yet.':'እስካሁን ማሳወቂያ የለም።','Admin panel':'የአስተዳዳሪ ፓነል',
+    'Pending requests':'በመጠባበቅ ላይ ያሉ ጥያቄዎች','Admin Profile':'የአስተዳዳሪ መገለጫ','Edit':'አርትዕ',
+    'Change Photo & Name':'ፎቶ እና ስም ቀይር','Groups & Activities':'ቡድኖች እና ተግባራት','Create Group':'+ ቡድን ፍጠር',
+    'Sign-up requests':'የምዝገባ ጥያቄዎች','waiting':'በመጠባበቅ ላይ','Approve':'አጽድቅ','Reject':'ውድቅ አድርግ',
+    'Remove':'አስወግድ','Cancel':'ሰርዝ','Save':'አስቀምጥ','Close':'ዝጋ','Confirm':'አረጋግጥ','Delete':'ሰርዝ',
+    'Download':'አውርድ','Preview':'ቅድመ እይታ','Open':'ክፈት','Sent':'ተልኳል','Draft':'ረቂቅ',
+    'Answer':'መልስ','Answers':'መልሶች','No pending requests.':'በመጠባበቅ ላይ ጥያቄ የለም።',
     'New here? Send a request to the admin.':'አዲስ ነዎት? ለአስተዳዳሪው ጥያቄ ይላኩ።',
     'Change your password using your current one.':'የአሁኑን የይለፍ ቃል በመጠቀም ይቀይሩ።',
     'Every member can view, open, download, and edit these files.':'እያንዳንዱ አባል እነዚህን ፋይሎች ማየት፣ መክፈት፣ ማውረድ እና ማርትዕ ይችላል።',
-    'All documents':'ሁሉም ሰነዶች','No documents uploaded yet.':'እስካሁን ሰነድ አልተጫነም።',
-    'Tap to choose a file':'ፋይል ለመምረጥ ይጫኑ','Preview not available.':'ቅድመ እይታ አይገኝም።',
-    'No readings logged yet. Be the first!':'እስካሁን ንባብ አልተመዘገበም። የመጀመሪያው ይሁኑ!',
-    'You have no saved notes yet.':'እስካሁን የተቀመጠ ማስታወሻ የለዎትም።',
-    'Tap the photo to change it':'ፎቶውን ለመቀየር ይጫኑ','My Profile':'የእኔ መገለጫ',
-    'Role':'ሚና','Administrator':'አስተዳዳሪ','Member':'አባል','Log out':'ውጣ',
-    'Upload Photo':'ፎቶ ጫን','Change Photo':'ፎቶ ቀይር',
-    'Max 2 MB · Auto-resized to 200×200':'ከፍተኛ 2 MB · በራስ-ሰር ወደ 200×200 ይስተካከላል',
-    'reading':'ንባብ','readings':'ንባቦች','joined':'ተቀላቅሏል',
-    'Requested':'ተጠይቋል','Handled':'ተከናውኗል','notification':'ማሳወቂያ','notifications':'ማሳወቂያዎች',
+    'No documents uploaded yet.':'እስካሁን ሰነድ አልተጫነም።','Tap to choose a file':'ፋይል ለመምረጥ ይጫኑ',
+    'Preview not available.':'ቅድመ እይታ አይገኝም።','No readings logged yet. Be the first!':'እስካሁን ንባብ አልተመዘገበም። የመጀመሪያው ይሁኑ!',
+    'You have no saved notes yet.':'እስካሁን የተቀመጠ ማስታወሻ የለዎትም።','Tap the photo to change it':'ፎቶውን ለመቀየር ይጫኑ',
+    'My Profile':'የእኔ መገለጫ','Role':'ሚና','Administrator':'አስተዳዳሪ','Member':'አባል','Log out':'ውጣ',
+    'Upload Photo':'ፎቶ ጫን','Change Photo':'ፎቶ ቀይር','Max 2 MB · Auto-resized to 200×200':'ከፍተኛ 2 MB · በራስ-ሰር ወደ 200×200 ይስተካከላል',
+    'reading':'ንባብ','readings':'ንባቦች','joined':'ተቀላቅሏል','Requested':'ተጠይቋል','Handled':'ተከናውኗል',
+    'notification':'ማሳወቂያ','notifications':'ማሳወቂያዎች',
     'No questions yet. Tap "+ Add Question" below.':'እስካሁን ጥያቄ የለም። “+ ጥያቄ ጨምር” ከታች ይጫኑ።',
-    'Add Question':'+ ጥያቄ ጨምር','Send & Publish':'ላክ እና አትም',
-    'Question':'ጥያቄ','Your answer':'መልስዎ','Save answer':'መልስ አስቀምጥ',
-    'Delete Answer':'መልስ ሰርዝ','Remove your answer?':'መልስዎን ማስወገድ ይፈልጋሉ?',
+    'Add Question':'+ ጥያቄ ጨምር','Send & Publish':'ላክ እና አትም','Question':'ጥያቄ','Your answer':'መልስዎ',
+    'Save answer':'መልስ አስቀምጥ','Delete Answer':'መልስ ሰርዝ','Remove your answer?':'መልስዎን ማስወገድ ይፈልጋሉ?',
     'Please write an answer before saving.':'እባክዎ ከማስቀመጥዎ በፊት መልስ ይጻፉ።',
-    'Approve Request':'ጥያቄ አጽድቅ','Reject Request':'ጥያቄ ውድቅ አድርግ',
-    'Remove Member':'አባል አስወግድ','New password must be different.':'አዲሱ የይለፍ ቃል ከአሮጌው መለየት አለበት።',
-    'Please fill in all fields.':'እባክዎ ሁሉንም ቦታዎች ይሙሉ።',
-    'Name or password is incorrect.':'ስም ወይም የይለፍ ቃል ትክክል አይደለም።',
-    'Your account is not approved yet.':'መለያዎ እስካሁን አልጸደቀም።',
+    'Approve Request':'ጥያቄ አጽድቅ','Reject Request':'ጥያቄ ውድቅ አድርግ','Remove Member':'አባል አስወግድ',
+    'New password must be different.':'አዲሱ የይለፍ ቃል ከአሮጌው መለየት አለበት።','Please fill in all fields.':'እባክዎ ሁሉንም ቦታዎች ይሙሉ።',
+    'Name or password is incorrect.':'ስም ወይም የይለፍ ቃል ትክክል አይደለም።','Your account is not approved yet.':'መለያዎ እስካሁን አልጸደቀም።',
     'Your request is still waiting for admin approval.':'ጥያቄዎ አሁንም የአስተዳዳሪ ፈቃድ እየጠበቀ ነው።',
     'Request sent! The admin will review it shortly.':'ጥያቄው ተልኳል! አስተዳዳሪው በቅርቡ ይመለከተዋል።',
     'Password must be at least 4 characters.':'የይለፍ ቃሉ ቢያንስ 4 ቁምፊዎች ሊኖሩት ይገባል።',
     'New password must be at least 4 characters.':'አዲሱ የይለፍ ቃል ቢያንስ 4 ቁምፊዎች ሊኖሩት ይገባል።',
-    'Passwords do not match.':'የይለፍ ቃሎቹ አይመሳሰሉም።',
-    'New passwords do not match.':'አዲሶቹ የይለፍ ቃሎች አይመሳሰሉም።',
+    'Passwords do not match.':'የይለፍ ቃሎቹ አይመሳሰሉም።','New passwords do not match.':'አዲሶቹ የይለፍ ቃሎች አይመሳሰሉም።',
     'This full name is already registered.':'ይህ ሙሉ ስም አስቀድሞ ተመዝግቧል።',
     'A sign-up request with this full name is already pending.':'በዚህ ሙሉ ስም የተላከ የምዝገባ ጥያቄ አስቀድሞ በመጠባበቅ ላይ ነው።',
     'Password changed successfully. You can log in now.':'የይለፍ ቃሉ በተሳካ ሁኔታ ተቀይሯል። አሁን መግባት ይችላሉ።',
-    'Please choose an image file.':'እባክዎ የምስል ፋይል ይምረጡ።',
-    'Image is larger than 2 MB.':'ምስሉ ከ2 MB በላይ ነው።',
-    'Could not read that image.':'ያንን ምስል ማንበብ አልተቻለም።',
-    'Storage is full.':'የማከማቻ ቦታው ሞልቷል።',
-    'Please enter your name.':'እባክዎ ስምዎን ያስገቡ።',
-    'Three admins:':'ሶስት አስተዳዳሪዎች፡','Auto-fill Admin':'አስተዳዳሪን በራስ-ሰር ሙላ',
-    'just now':'አሁን','Loading…':'በመጫን ላይ…',
-    'Please enter a chapter number to read.':'እባክዎ የምዕራፉን ቁጥር ያስገቡ።','Please enter a valid chapter number.':'እባክዎ ትክክለኛ የምዕራፍ ቁጥር ያስገቡ።'
+    'Please choose an image file.':'እባክዎ የምስል ፋይል ይምረጡ።','Image is larger than 2 MB.':'ምስሉ ከ2 MB በላይ ነው።',
+    'Could not read that image.':'ያንን ምስል ማንበብ አልተቻለም።','Storage is full.':'የማከማቻ ቦታው ሞልቷል።',
+    'Please enter your name.':'እባክዎ ስምዎን ያስገቡ።','just now':'አሁን','Loading…':'በመጫን ላይ…',
+    'Please enter a chapter number to read.':'እባክዎ የምዕራፉን ቁጥር ያስገቡ።','Please enter a valid chapter number.':'እባክዎ ትክክለኛ የምዕራፍ ቁጥር ያስገቡ።',
+    'Please enter the chapter(s) you read.':'እባክዎ ያነበቡትን ምዕራፍ(ሎች) ያስገቡ።',
+    'Please write something before saving.':'እባክዎ ከማስቀመጥዎ በፊት አንድ ነገር ይጻፉ።',
+    'Note saved!':'ማስታወሻ ተቀምጧል!','Logged!':'ተመዝግቧል!'
   }
 };
 
@@ -825,14 +607,12 @@ function tr(s){
   const x = String(s ?? '');
   return (LANG[currentLang] && LANG[currentLang][x]) || x;
 }
-
 function setLanguage(lang){
   if(!LANG[lang]) return;
   currentLang = lang;
   localStorage.setItem(LANG_KEY, lang);
   render();
 }
-
 function translateDOM(){
   const root = document.getElementById('root');
   const modal = document.getElementById('modal-root');
@@ -865,7 +645,6 @@ function translateDOM(){
   const sel = document.getElementById('language-selector');
   if(sel) sel.value = currentLang;
 }
-
 const langObserver = new MutationObserver(() => {
   if(!window.__translating) {
     window.__translating = true;
@@ -876,6 +655,9 @@ const langObserver = new MutationObserver(() => {
   }
 });
 
+/* ══════════════════════════════════════════════════════════════
+   BIBLE BOOKS
+   ══════════════════════════════════════════════════════════════ */
 const BIBLE_BOOKS = [
   'Genesis','Exodus','Leviticus','Numbers','Deuteronomy','Joshua','Judges','Ruth',
   '1 Samuel','2 Samuel','1 Kings','2 Kings','1 Chronicles','2 Chronicles','Ezra',
@@ -887,9 +669,6 @@ const BIBLE_BOOKS = [
   '1 Thessalonians','2 Thessalonians','1 Timothy','2 Timothy','Titus','Philemon',
   'Hebrews','James','1 Peter','2 Peter','1 John','2 John','3 John','Jude','Revelation'
 ];
-
-// Stable IDs used by the Oromo/Amharic Bible API. Values stay in English
-// internally so saved reading records remain compatible with the app.
 const BIBLE_BOOK_IDS = [
   'GEN','EXO','LEV','NUM','DEU','JOS','JDG','RUT','1SA','2SA','1KI','2KI','1CH','2CH','EZR',
   'NEH','EST','JOB','PSA','PRO','ECC','SNG','ISA','JER','LAM','EZK','DAN','HOS','AMO','MIC',
@@ -900,48 +679,27 @@ const BIBLE_BOOK_INDEX = Object.fromEntries(BIBLE_BOOKS.map((b,i)=>[b,BIBLE_BOOK
 
 const BIBLE_BOOK_NAMES = {
   en: BIBLE_BOOKS,
-  om: [
-    'Uumama','Seera Baʼuu','Seera Lewwootaa','Lakkoobsa','Keessa Deebii','Iyyaasuu','Abbootii Murtii','Ruut',
-    '1 Saamuʼeel','2 Saamuʼeel','1 Mootota','2 Mootota','1 Seenaa','2 Seenaa','Macaafa Izraa','Nahimiyaa','Asteer',
-    'Iyyoob','Faarfannaa','Fakkeenya','Lallaba','Weedduu Weedduu','Isaayyaas','Ermiyaas','Faaruu','Hisqiʼeel','Daaniʼel',
-    'Hooseʼaa','Yoʼeel','Amoos','Obaadiyaa','Yoonaas','Miikiyaas','Naahoom','Anbaaqoom','Sefaaniyaa','Haagee','Zakkaariyaas',
-    'Miilkiyaas','Maatewos','Maarqos','Luqaas','Yohannis','Hojii Ergamootaa','Roomaa','1 Qorontos','2 Qorontos','Galaatiyaa',
-    'Efesoon','Filiphisiiyus','Qolosaayis','1 Tasalonqee','2 Tasalonqee','1 Ximotewos','2 Ximotewos','Tiitoo','Fiilimoonaa',
-    'Ibroota','Yaaqoob','1 Pheexiros','2 Pheexiros','1 Yohannis','2 Yohannis','3 Yohannis','Yihuudaa','Mulʼata'
-  ],
-  am: [
-    'ኦሪት ዘፍጥረት','ኦሪት ዘጸአት','ኦሪት ዘሌዋውያን','ኦሪት ዘኍልቍ','ኦሪት ዘዳግም','መጽሐፈ ኢያሱ','መጽሐፈ መሳፍንት','መጽሐፈ ሩት',
-    'መጽሐፈ ሳሙኤል ቀዳማዊ','መጽሐፈ ሳሙኤል ካልዕ','መጽሐፈ ነገሥት ቀዳማዊ','መጽሐፈ ነገሥት ካልዕ',
-    'መጽሐፈ ዜና መዋዕል ቀዳማዊ','መጽሐፈ ዜና መዋዕል ካልዕ','መጽሐፈ ዕዝራ','መጽሐፈ ነህምያ','መጽሐፈ አስቴር','መጽሐፈ ኢዮብ',
-    'መዝሙረ ዳዊት','መጽሐፈ ምሳሌ','መጽሐፈ መክብብ','መኃልየ መኃልይ','ትንቢተ ኢሳይያስ','ትንቢተ ኤርምያስ','ሰቆቃወ ኤርምያስ',
-    'ትንቢተ ሕዝቅኤል','ትንቢተ ዳንኤል','ትንቢተ ሆሴዕ','ትንቢተ ኢዮኤል','ትንቢተ አሞጽ','ትንቢተ አብድዩ','ትንቢተ ዮናስ',
-    'ትንቢተ ሚክያስ','ትንቢተ ናሆም','ትንቢተ ዕንባቆም','ትንቢተ ሶፎንያስ','ትንቢተ ሐጌ','ትንቢተ ዘካርያስ','ትንቢተ ሚልክያስ',
-    'የማቴዎስ ወንጌል','የማርቆስ ወንጌል','የሉቃስ ወንጌል','የዮሐንስ ወንጌል','የሐዋርያት ሥራ','ወደ ሮሜ ሰዎች','1ኛ ወደ ቆሮንቶስ ሰዎች',
-    '2ኛ ወደ ቆሮንቶስ ሰዎች','ወደ ገላትያ ሰዎች','ወደ ኤፌሶን ሰዎች','ወደ ፊልጵስዩስ ሰዎች','ወደ ቆላስይስ ሰዎች',
-    '1ኛ ወደ ተሰሎንቄ ሰዎች','2ኛ ወደ ተሰሎንቄ ሰዎች','1ኛ ወደ ጢሞቴዎስ','2ኛ ወደ ጢሞቴዎስ','ወደ ቲቶ','ወደ ፊልሞና',
-    'ወደ ዕብራውያን','የያዕቆብ መልእክት','1ኛ የጴጥሮስ መልእክት','2ኛ የጴጥሮስ መልእክት',
-    '1ኛ የዮሐንስ መልእክት','2ኛ የዮሐንስ መልእክት','3ኛ የዮሐንስ መልእክት','የይሁዳ መልእክት','የዮሐንስ ራእይ'
-  ]
+  om: ['Uumama','Seera Baʼuu','Seera Lewwootaa','Lakkoobsa','Keessa Deebii','Iyyaasuu','Abbootii Murtii','Ruut','1 Saamuʼeel','2 Saamuʼeel','1 Mootota','2 Mootota','1 Seenaa','2 Seenaa','Macaafa Izraa','Nahimiyaa','Asteer','Iyyoob','Faarfannaa','Fakkeenya','Lallaba','Weedduu Weedduu','Isaayyaas','Ermiyaas','Faaruu','Hisqiʼeel','Daaniʼel','Hooseʼaa','Yoʼeel','Amoos','Obaadiyaa','Yoonaas','Miikiyaas','Naahoom','Anbaaqoom','Sefaaniyaa','Haagee','Zakkaariyaas','Miilkiyaas','Maatewos','Maarqos','Luqaas','Yohannis','Hojii Ergamootaa','Roomaa','1 Qorontos','2 Qorontos','Galaatiyaa','Efesoon','Filiphisiiyus','Qolosaayis','1 Tasalonqee','2 Tasalonqee','1 Ximotewos','2 Ximotewos','Tiitoo','Fiilimoonaa','Ibroota','Yaaqoob','1 Pheexiros','2 Pheexiros','1 Yohannis','2 Yohannis','3 Yohannis','Yihuudaa','Mulʼata'],
+  am: ['ኦሪት ዘፍጥረት','ኦሪት ዘጸአት','ኦሪት ዘሌዋውያን','ኦሪት ዘኍልቍ','ኦሪት ዘዳግም','መጽሐፈ ኢያሱ','መጽሐፈ መሳፍንት','መጽሐፈ ሩት','መጽሐፈ ሳሙኤል ቀዳማዊ','መጽሐፈ ሳሙኤል ካልዕ','መጽሐፈ ነገሥት ቀዳማዊ','መጽሐፈ ነገሥት ካልዕ','መጽሐፈ ዜና መዋዕል ቀዳማዊ','መጽሐፈ ዜና መዋዕል ካልዕ','መጽሐፈ ዕዝራ','መጽሐፈ ነህምያ','መጽሐፈ አስቴር','መጽሐፈ ኢዮብ','መዝሙረ ዳዊት','መጽሐፈ ምሳሌ','መጽሐፈ መክብብ','መኃልየ መኃልይ','ትንቢተ ኢሳይያስ','ትንቢተ ኤርምያስ','ሰቆቃወ ኤርምያስ','ትንቢተ ሕዝቅኤል','ትንቢተ ዳንኤል','ትንቢተ ሆሴዕ','ትንቢተ ኢዮኤል','ትንቢተ አሞጽ','ትንቢተ አብድዩ','ትንቢተ ዮናስ','ትንቢተ ሚክያስ','ትንቢተ ናሆም','ትንቢተ ዕንባቆም','ትንቢተ ሶፎንያስ','ትንቢተ ሐጌ','ትንቢተ ዘካርያስ','ትንቢተ ሚልክያስ','የማቴዎስ ወንጌል','የማርቆስ ወንጌል','የሉቃስ ወንጌል','የዮሐንስ ወንጌል','የሐዋርያት ሥራ','ወደ ሮሜ ሰዎች','1ኛ ወደ ቆሮንቶስ ሰዎች','2ኛ ወደ ቆሮንቶስ ሰዎች','ወደ ገላትያ ሰዎች','ወደ ኤፌሶን ሰዎች','ወደ ፊልጵስዩስ ሰዎች','ወደ ቆላስይስ ሰዎች','1ኛ ወደ ተሰሎንቄ ሰዎች','2ኛ ወደ ተሰሎንቄ ሰዎች','1ኛ ወደ ጢሞቴዎስ','2ኛ ወደ ጢሞቴዎስ','ወደ ቲቶ','ወደ ፊልሞና','ወደ ዕብራውያን','የያዕቆብ መልእክት','1ኛ የጴጥሮስ መልእክት','2ኛ የጴጥሮስ መልእክት','1ኛ የዮሐንስ መልእክት','2ኛ የዮሐንስ መልእክት','3ኛ የዮሐንስ መልእክት','የይሁዳ መልእክት','የዮሐንስ ራእይ']
 };
-
 function bibleBookLabel(bookEn){
   const i = BIBLE_BOOKS.indexOf(bookEn);
   return (BIBLE_BOOK_NAMES[currentLang] || BIBLE_BOOK_NAMES.en)[i] || bookEn;
 }
-
 function bibleBookOptions(){
   const names = BIBLE_BOOK_NAMES[currentLang] || BIBLE_BOOK_NAMES.en;
   return BIBLE_BOOKS.map((b,i) => `<option value="${esc(b)}">${esc(names[i] || b)}</option>`).join('');
 }
 
-
+/* ══════════════════════════════════════════════════════════════
+   DEFAULT ADMINS + HELPERS
+   ══════════════════════════════════════════════════════════════ */
 const DEFAULT_ADMINS = [
   { id:'admin-root-1', fullName:'Admin',  password:'admin123' },
   { id:'admin-root-2', fullName:'Admin2', password:'admin123' },
   { id:'admin-root-3', fullName:'Admin3', password:'admin123' }
 ];
 
-const KEY       = 'bsg-app-v17';
 const SESSION   = 'bsg-session-v17';
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
@@ -962,7 +720,7 @@ function fmtTime(iso){
   const d = new Date(iso);
   if(isNaN(d)) return iso;
   const diff = (Date.now() - d.getTime())/1000;
-  if(diff < 60)    return 'just now';
+  if(diff < 60)    return tr('just now');
   if(diff < 3600)  return Math.floor(diff/60) + 'm ago';
   if(diff < 86400) return Math.floor(diff/3600) + 'h ago';
   if(diff < 604800)return Math.floor(diff/86400) + 'd ago';
@@ -1102,7 +860,7 @@ function showBibleModal(title, contentHtml) {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   MY PROFILE MODAL — photo upload + name + log out
+   MY PROFILE MODAL
    ══════════════════════════════════════════════════════════════ */
 function openMyProfile(){
   const u = currentUser();
@@ -1114,8 +872,6 @@ function openMyProfile(){
           <h3 style="margin:0;">My Profile</h3>
           <button class="btn sm ghost" onclick="hideModal()">✕</button>
         </div>
-
-        <!-- ══ PHOTO UPLOAD AREA ══ -->
         <div class="profile-photo-wrap">
           <div class="profile-photo">
             ${u.photo ? `<img src="${u.photo}" alt="">` : esc(initials(u.fullName))}
@@ -1129,16 +885,12 @@ function openMyProfile(){
           </div>
           <p class="tiny muted center" style="margin-top:8px;">Max 2 MB · Auto-resized to 200×200</p>
         </div>
-
         <label>Full name<input id="myprof-name" value="${esc(u.fullName)}"></label>
         <label>Role<input value="${u.role === 'admin' ? 'Administrator' : 'Member'}" disabled></label>
-
         <div class="actions" style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">
           <button class="btn" onclick="hideModal()">Cancel</button>
           <button class="btn primary" onclick="saveMyProfile()">Save</button>
         </div>
-
-        <!-- ══ LOG OUT ══ -->
         <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line);">
           <button class="btn danger block" onclick="logoutFromProfile()"
                   style="display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;">
@@ -1165,7 +917,13 @@ function handlePhotoUpload(input){
       const sx = (img.width - s) / 2, sy = (img.height - s) / 2;
       ctx.drawImage(img, sx, sy, s, s, 0, 0, size, size);
       const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
-      try { u.photo = dataUrl; save(); render(); openMyProfile(); }
+      try {
+        u.photo = dataUrl;
+        updateUser(u);
+        render();
+        openMyProfile();
+        showSyncBadge('✓ Photo saved');
+      }
       catch(err){ alert('Storage is full.'); }
     };
     img.onerror = () => alert('Could not read that image.');
@@ -1173,86 +931,106 @@ function handlePhotoUpload(input){
   };
   reader.readAsDataURL(f);
 }
-function removeMyPhoto(){ const u = currentUser(); if(!u) return; u.photo = null; save(); render(); openMyProfile(); }
+function removeMyPhoto(){
+  const u = currentUser(); if(!u) return;
+  u.photo = null;
+  updateUser(u);
+  render();
+  openMyProfile();
+  showSyncBadge('✓ Photo removed');
+}
 function saveMyProfile(){
   const u = currentUser(); if(!u) return;
   const name = document.getElementById('myprof-name').value.trim();
   if(!name){ alert('Please enter your name.'); return; }
-  u.fullName = name; save(); hideModal(); render();
+  u.fullName = name;
+  updateUser(u);
+  hideModal();
+  render();
+  showSyncBadge('✓ Profile saved');
 }
 function logoutFromProfile(){
   hideModal();
   setTimeout(() => logout(), 150);
 }
 
-function blankState(){
-  const admins = DEFAULT_ADMINS.map(a => ({
-    id: a.id, fullName: a.fullName, password: a.password,
-    role: 'admin', approved: true, joined: now(),
-    notifSeenAt: now(), photo: null
-  }));
-  return { users: admins, requests:[], documents:[], readings:[], notes:[], groups:[], notifications:[] };
-}
-function load(){
-  try{
-    const raw = localStorage.getItem(KEY);
-    if(raw){
-      const d = JSON.parse(raw);
-      const loaded = {
-        users:         Array.isArray(d.users)         ? d.users         : [],
-        requests:      Array.isArray(d.requests)      ? d.requests      : [],
-        documents:     Array.isArray(d.documents)     ? d.documents     : [],
-        readings:      Array.isArray(d.readings)      ? d.readings      : [],
-        notes:         Array.isArray(d.notes)         ? d.notes         : [],
-        groups:        Array.isArray(d.groups)        ? d.groups        : [],
-        notifications: Array.isArray(d.notifications) ? d.notifications : []
+/* ══════════════════════════════════════════════════════════════
+   FIREBASE SYNC
+   ══════════════════════════════════════════════════════════════ */
+let state = {
+  users: [], requests: [], documents: [], readings: [], notes: [],
+  groups: [], notifications: []
+};
+let session = localStorage.getItem(SESSION) || null;
+let firebaseReady = false;
+
+function seedAdmins(){
+  DEFAULT_ADMINS.forEach(def => {
+    const exists = state.users.find(u => u.id === def.id);
+    if(!exists){
+      const adminUser = {
+        id: def.id, fullName: def.fullName, password: def.password,
+        role: 'admin', approved: true, joined: now(),
+        notifSeenAt: now(), photo: null
       };
-      loaded.groups = loaded.groups.map(g => {
-        const activities = Array.isArray(g.activities) ? g.activities : [];
-        return {
+      set(ref(fbDB, 'users/' + def.id), adminUser);
+    }
+  });
+}
+
+function attachFirebaseListeners(){
+  const collections = ['users','requests','documents','readings','notes','groups','notifications'];
+  collections.forEach(name => {
+    onValue(ref(fbDB, name), snap => {
+      const val = snap.val();
+      if(name === 'users'){
+        state.users = val ? Object.values(val) : [];
+        seedAdmins();
+      } else if(name === 'groups'){
+        state.groups = val ? Object.values(val).map(g => ({
           id: g.id, name: g.name || 'Group',
           memberIds: Array.isArray(g.memberIds) ? g.memberIds : [],
-          activities: activities.map(a => ({
+          activities: g.activities ? Object.values(g.activities).map(a => ({
             id: a.id, name: a.name || 'Activity',
             creatorId: a.creatorId || null,
             createdAt: a.createdAt || now(),
-            sent: !!a.sent || !!a.finished,
-            sentAt: a.sentAt || a.finishedAt || null,
+            sent: !!a.sent,
+            sentAt: a.sentAt || null,
             targetGroupIds: Array.isArray(a.targetGroupIds) ? a.targetGroupIds : [g.id],
-            questions: Array.isArray(a.questions) ? a.questions.map(q => ({
+            questions: a.questions ? Object.values(a.questions).map(q => ({
               id: q.id, text: String(q.text || ''),
-              answers: (q.answers && typeof q.answers === 'object') ? q.answers : {}
+              answers: q.answers && typeof q.answers === 'object' ? q.answers : {}
             })) : []
-          }))
-        };
-      });
-      DEFAULT_ADMINS.forEach(def => {
-        const exists = loaded.users.find(u => u.id === def.id || norm(u.fullName) === norm(def.fullName));
-        if(!exists){
-          loaded.users.push({
-            id: def.id, fullName: def.fullName, password: def.password,
-            role: 'admin', approved: true, joined: now(),
-            notifSeenAt: now(), photo: null
-          });
+          })) : []
+        })) : [];
+      } else {
+        state[name] = val ? Object.values(val) : [];
+        if(['requests','documents','readings','notes','notifications'].includes(name)){
+          state[name].sort((a,b) => (b.date || '').localeCompare(a.date || ''));
         }
-      });
-      return loaded;
-    }
-  }catch(e){ console.warn('load failed', e); }
-  return blankState();
+      }
+      render();
+    }, err => {
+      console.error('Firebase listen error:', err);
+      showSyncBadge('⚠ Connection error', true);
+    });
+  });
 }
-let state = load();
-let session = localStorage.getItem(SESSION) || null;
-function save(){
-  try{ localStorage.setItem(KEY, JSON.stringify(state)); }
-  catch(e){ alert('Storage is full.'); console.error(e); }
-}
+
+function fbWrite(path, value){ return set(ref(fbDB, path), value); }
+function fbRemove(path){ return set(ref(fbDB, path), null); }
+function updateUser(u){ return fbWrite('users/' + u.id, u); }
+function save(){}
+
 const currentUser = () => state.users.find(u => u.id === session) || null;
 
+/* ══════════════════════════════════════════════════════════════
+   UI STATE
+   ══════════════════════════════════════════════════════════════ */
 let ui = {
   tab: 'home', authTab: 'login',
   authMsg: null, docMsg: null, readMsg: null, noteMsg: null,
-  folderOpen: {}, adminSlot: 1,
+  folderOpen: {},
   notifSelectMode: false, notifSelected: {},
   qMsg: {}, qOpen: {}
 };
@@ -1261,7 +1039,7 @@ function setTab(t){
   ui.tab = t;
   ui.notifSelectMode = false; ui.notifSelected = {};
   const u = currentUser();
-  if(t === 'notifs' && u){ u.notifSeenAt = now(); save(); }
+  if(t === 'notifs' && u){ u.notifSeenAt = now(); updateUser(u); }
   render();
 }
 function authMsg(type, text){ ui.authMsg = {type, text}; render(); }
@@ -1279,8 +1057,12 @@ function toggleQOpen(qid){
 function notify(actorId, text, kind, extra){
   const n = { id:uid(), actorId, text, kind:kind||'info', date:now() };
   if(extra) Object.assign(n, extra);
-  state.notifications.unshift(n);
-  if(state.notifications.length > 200) state.notifications.length = 200;
+  fbWrite('notifications/' + n.id, n);
+  const all = state.notifications.slice(0);
+  if(all.length > 200){
+    all.sort((a,b) => (b.date||'').localeCompare(a.date||''));
+    all.slice(200).forEach(old => fbRemove('notifications/' + old.id));
+  }
 }
 function unreadCount(u){
   if(!u) return 0;
@@ -1289,7 +1071,7 @@ function unreadCount(u){
 }
 
 /* ══════════════════════════════════════════════════════════════
-   AUTH
+   AUTH — clean login form
    ══════════════════════════════════════════════════════════════ */
 function renderAuth(){
   const t = ui.authTab;
@@ -1298,8 +1080,7 @@ function renderAuth(){
     body = `
       <label>Full name<input id="li-name" autocomplete="username" placeholder="e.g. Yohannes Tesfaye"></label>
       <label>Password<input id="li-pass" type="password" autocomplete="current-password" placeholder="••••••••"></label>
-      <button class="btn primary block" onclick="doLogin()">Log in</button>
-      <button class="btn block" style="margin-top:8px" onclick="autoFillAdmin()">⚡ Auto-fill Admin${ui.adminSlot === 1 ? '' : ui.adminSlot}</button>`;
+      <button class="btn primary block" onclick="doLogin()">Log in</button>`;
   } else if(t === 'signup'){
     body = `
       <p class="small muted" style="margin-bottom:14px">New here? Send a request to the admin.</p>
@@ -1336,17 +1117,8 @@ function renderAuth(){
       </div>
       ${msg}
       ${body}
-      ${t==='login' ? `<div class="hint">Three admins: <b>Admin</b>, <b>Admin2</b>, <b>Admin3</b><br>Password: <b>admin123</b></div>` : ''}
     </div>
   </div>`;
-}
-function autoFillAdmin() {
-  const admins = ['Admin','Admin2','Admin3'];
-  const name = admins[ui.adminSlot - 1];
-  document.getElementById('li-name').value = name;
-  document.getElementById('li-pass').value = 'admin123';
-  ui.adminSlot = (ui.adminSlot % 3) + 1;
-  doLogin();
 }
 function doLogin(){
   const name = document.getElementById('li-name').value;
@@ -1360,13 +1132,14 @@ function doLogin(){
       adminUser = { id: matchedDefault.id, fullName: matchedDefault.fullName,
         password: matchedDefault.password, role: 'admin', approved: true,
         joined: now(), notifSeenAt: now(), photo: null };
-      state.users.push(adminUser);
+      updateUser(adminUser);
     } else {
       adminUser.fullName = matchedDefault.fullName;
       adminUser.password = matchedDefault.password;
       adminUser.role = 'admin'; adminUser.approved = true;
+      updateUser(adminUser);
     }
-    save(); session = adminUser.id;
+    session = adminUser.id;
     localStorage.setItem(SESSION, session);
     ui.tab = 'home'; ui.authMsg = null; render();
     return;
@@ -1393,9 +1166,9 @@ function doSignup(){
   const dupReq = state.requests.find(r => norm(r.fullName) === norm(name));
   if(dupReq) return authMsg('info','A sign-up request with this full name is already pending.');
   const reqId = uid();
-  state.requests.push({ id: reqId, fullName:name, password:pass, date:now(), status:'pending' });
+  const request = { id: reqId, fullName:name, password:pass, date:now(), status:'pending' };
+  fbWrite('requests/' + reqId, request);
   notify(null, `New sign-up request: ${name}`, 'request', { requestId: reqId });
-  save();
   authMsg('ok','Request sent! The admin will review it shortly.');
 }
 function doChangePassword(){
@@ -1409,19 +1182,20 @@ function doChangePassword(){
   if(newP === oldP) return authMsg('err','New password must be different.');
   const user = state.users.find(u => norm(u.fullName) === norm(name) && u.password === oldP);
   if(!user) return authMsg('err','Name or old password is incorrect.');
-  user.password = newP; save();
+  user.password = newP;
+  updateUser(user);
   authMsg('ok','Password changed successfully. You can log in now.');
 }
 function logout(){
   session = null; localStorage.removeItem(SESSION);
   ui.tab = 'home'; ui.authTab = 'login'; ui.authMsg = null;
-  ui.adminSlot = 1; ui.notifSelectMode = false; ui.notifSelected = {};
+  ui.notifSelectMode = false; ui.notifSelected = {};
   ui.qOpen = {};
   render();
 }
 
 /* ══════════════════════════════════════════════════════════════
-   APP SHELL — Tapping "Bible Study Group" opens profile/photo modal
+   APP SHELL
    ══════════════════════════════════════════════════════════════ */
 function renderApp(u){
   const unread = unreadCount(u);
@@ -1433,12 +1207,7 @@ function renderApp(u){
     { id:'notifs',  ic:'🔔', label:'Alerts', badge: unread },
   ];
   if(u.role === 'admin') tabs.splice(3, 0, { id:'admin', ic:'⚙️', label:'Admin', badge: pending });
-
-  // Avatar shows user's photo if uploaded, otherwise 📖 emoji
-  const avatarInner = u.photo
-    ? `<img src="${u.photo}" alt="">`
-    : `📖`;
-
+  const avatarInner = u.photo ? `<img src="${u.photo}" alt="">` : `📖`;
   return `
   <header class="app-header">
     <select id="language-selector" class="lang-select" aria-label="Language"
@@ -1492,7 +1261,7 @@ function renderMemberItem(m, opts){
 }
 
 /* ══════════════════════════════════════════════════════════════
-   ADMIN — question editor + target groups
+   ADMIN — question editor
    ══════════════════════════════════════════════════════════════ */
 function renderAdminQuestion(group, activity, q, qIndex){
   const label = 'Q' + (qIndex + 1);
@@ -1562,7 +1331,7 @@ function renderAdminActivity(group, activity){
 }
 
 /* ══════════════════════════════════════════════════════════════
-   MEMBER — Question card with 2 rectangles
+   MEMBER — Question card
    ══════════════════════════════════════════════════════════════ */
 function renderMemberQuestion(group, activity, q, qIndex){
   const u = currentUser();
@@ -1619,7 +1388,6 @@ function renderMemberQuestion(group, activity, q, qIndex){
         </div>
       </div>`;
   }
-
   const answersListHtml = otherUserIds.length ? `
     <div class="q-answers-list">
       <div class="q-list-label">📝 All answers (${otherUserIds.length}):</div>
@@ -1641,7 +1409,6 @@ function renderMemberQuestion(group, activity, q, qIndex){
     <div class="q-answers-list">
       <div class="q-list-label">📝 No answers yet — be the first!</div>
     </div>`;
-
   return `<div class="q-card">${questionRect}${answerRect}${answersListHtml}</div>`;
 }
 function renderMemberActivity(group, activity){
@@ -1667,7 +1434,7 @@ function renderMemberActivity(group, activity){
       </div>
       ${isOpen ? `<div class="folder-body">
         <p class="tiny muted" style="margin:6px 0 4px;">
-          👆 Under each question, tap the <b>answer rectangle</b> (dashed border) to write your answer.
+          👆 Under each question, tap the <b>answer rectangle</b> to write your answer.
           ${myAnsCount === qs.length && qs.length > 0 ? '<span style="color:var(--ok);font-weight:600;">✓ You finished all questions.</span>' : ''}
         </p>
         ${questionsHtml}
@@ -1687,20 +1454,16 @@ function renderGroup(group, adminView){
   const isOpen = ui.folderOpen[key] !== false;
   const isAdmin = u && u.role === 'admin';
   const canEdit = adminView || isAdmin;
-
   let activeActivities;
   if(isAdmin){
     activeActivities = (group.activities || []).filter(a => !a.sent);
   } else {
     activeActivities = (group.activities || []).filter(a =>
-      (a.targetGroupIds || [group.id]).includes(group.id)
-    );
+      (a.targetGroupIds || [group.id]).includes(group.id));
   }
-
   const membersListHtml = membersInGroup.length
     ? membersInGroup.map(m => renderMemberItem(m)).join('')
     : '<p class="empty">No members in this group yet.</p>';
-
   const chipsHtml = canEdit ? `
     <div class="small muted" style="margin:14px 0 4px;"><b>Tap to add / remove members:</b></div>
     <div class="chips">
@@ -1713,7 +1476,6 @@ function renderGroup(group, adminView){
         </label>`;
       }).join('')}
     </div>` : '';
-
   const activitiesSection = `
     <div class="small muted" style="margin:18px 0 6px;">
       <b>${isAdmin ? 'Draft activities:' : 'Your activities:'}</b>
@@ -1728,11 +1490,9 @@ function renderGroup(group, adminView){
                 + New Activity (Draft)
               </button>` : ''}
   `;
-
   const deleteGroupBtn = isAdmin
     ? `<button class="btn xs danger" onclick="event.stopPropagation();deleteGroup('${group.id}')">✕</button>`
     : '';
-
   return `
     <div class="folder">
       <div class="folder-header" onclick="toggleFolder('${key}')">
@@ -1787,22 +1547,6 @@ function renderListOfMembers(removable){
         ${ungrouped.map(m => renderMemberItem(m, {removable: !!removable})).join('')}
       </div>` : ''}
     </div>`;
-}
-function renderGroupedMembers(adminView){
-  const u = currentUser();
-  const groups = state.groups || [];
-  const visibleGroups = adminView
-    ? groups
-    : groups.filter(g => u && (g.memberIds || []).includes(u.id));
-  if(!adminView){
-    if(!visibleGroups.length){
-      return '<p class="empty">You have not been assigned to any group yet. Please contact an admin.</p>';
-    }
-    return visibleGroups.map(g => renderGroup(g, false)).join('');
-  }
-  return renderAdminsFolder()
-       + visibleGroups.map(g => renderGroup(g, true)).join('')
-       + renderListOfMembers(true);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1880,14 +1624,11 @@ function homeTab(u){
         </div>
       </div>`;
   }).join('') : '<p class="empty">No reading activity yet.</p>';
-
   const finished = getFinishedActivities();
   const finishedHtml = finished.length
     ? finished.map(f => renderFinishedActivityCard(f)).join('')
     : '<p class="empty">No activities have been sent yet.</p>';
-
   const allGroupsHtml = (state.groups || []).map(g => renderGroup(g, false)).join('');
-
   return `
     <h2>Welcome, ${esc(u.fullName.split(' ')[0])} 👋</h2>
     <div class="stats">
@@ -1896,7 +1637,6 @@ function homeTab(u){
       <div class="stat"><b>${totalReadings}</b><span>Total readings</span></div>
       <div class="stat"><b>${myReadings}</b><span>Your readings</span></div>
     </div>
-
     <div class="card">
       <div class="row-between"><h3 style="margin:0">✅ Finished Activities (${finished.length})</h3></div>
       <p class="tiny muted" style="margin-top:0;margin-bottom:8px;">
@@ -1904,7 +1644,6 @@ function homeTab(u){
       </p>
       ${finishedHtml}
     </div>
-
     <div class="card">
       <div class="row-between">
         <h3 style="margin:0">Recent reading activity</h3>
@@ -1912,7 +1651,6 @@ function homeTab(u){
       </div>
       ${feed}
     </div>
-
     <div class="card">
       <div class="row-between">
         <h3 style="margin:0">👥 Groups, Admins & Members</h3>
@@ -1925,7 +1663,6 @@ function homeTab(u){
       ${allGroupsHtml || '<p class="empty">No groups created yet.</p>'}
       ${renderListOfMembers(false)}
     </div>
-
     <div class="card">
       <h3>Quick actions</h3>
       <div class="row">
@@ -2007,19 +1744,20 @@ function saveStandaloneNote(){
   const noteEl = document.getElementById('rd-note');
   const text = noteEl.value.trim();
   if(!text){ ui.noteMsg = {type:'err', text:'Please write something before saving.'}; return render(); }
-  state.notes.unshift({ id: uid(), userId: u.id, text, date: now() });
+  const n = { id: uid(), userId: u.id, text, date: now() };
+  fbWrite('notes/' + n.id, n);
   notify(u.id, `${u.fullName} saved a personal note`, 'note');
-  save(); ui.noteMsg = {type:'ok', text:'Note saved!'}; render();
+  ui.noteMsg = {type:'ok', text:'Note saved!'}; render();
 }
 function delNote(id){
   const n = state.notes.find(x => x.id === id); if(!n) return;
   showConfirm('Delete Note', 'Delete this note?', () => {
-    state.notes = state.notes.filter(x => x.id !== id); save(); render();
+    fbRemove('notes/' + id);
   }, 'Delete');
 }
 
 /* ══════════════════════════════════════════════════════════════
-   BIBLE FETCH — English only, reliable (bible-api.com)
+   BIBLE FETCH  ← RESTORED to the original working version
    ══════════════════════════════════════════════════════════════ */
 async function readChapter(){
   const u = currentUser(); if(!u) return;
@@ -2028,91 +1766,95 @@ async function readChapter(){
   if(!rawChap){ ui.readMsg = {type:'err', text:'Please enter a chapter number to read.'}; return render(); }
   const chapter = rawChap.split('-')[0].trim();
   if(!/^\d+$/.test(chapter)){ ui.readMsg = {type:'err', text:'Please enter a valid chapter number.'}; return render(); }
-
   const displayBook = bibleBookLabel(bookEn);
   const displayTitle = displayBook + ' ' + chapter;
   showBibleModal(displayTitle, '<p class="center muted" style="margin-top:40px">📖<br><br>Loading…</p>');
-
   try {
     let verses = [];
     let reference = displayTitle;
     let translationName = '';
-
     if(currentLang === 'om' || currentLang === 'am'){
       const version = currentLang === 'om' ? 'oromo' : 'amhara';
       const bookId = BIBLE_BOOK_INDEX[bookEn];
-      const cacheKey = `bible-cache-v1-${version}-${bookId}-${chapter}`;
-      let data = null;
-      try {
-        const saved = localStorage.getItem(cacheKey);
-        if(saved) data = JSON.parse(saved);
-      } catch(e) {}
-
-      if(!data){
-        const res = await fetch(`https://bible-api-kappa.vercel.app/api/v1/verses/${version}/${bookId}/${chapter}`);
-        if(!res.ok) throw new Error('fail');
-        data = await res.json();
-        try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch(e) {}
+      const cacheKey = `bsg-bible-${currentLang}-${bookId}-${chapter}`;
+      const cached = localStorage.getItem(cacheKey);
+      if(cached){
+        try{
+          const parsed = JSON.parse(cached);
+          if(Array.isArray(parsed) && parsed.length){
+            verses = parsed;
+          }
+        }catch(_e){}
       }
 
-      if(!data.data || !data.data.length) throw new Error('no verses');
-      verses = data.data.map(v => ({ verse: v.verseNum, text: v.verse }));
+      if(!verses.length){
+        const endpoints = [
+          `https://bible-api-five.vercel.app/api/v1/verses/${version}/${bookId}/${chapter}`,
+          `https://bible-api-kappa.vercel.app/api/v1/verses/${version}/${bookId}/${chapter}`
+        ];
+        let lastError = null;
+        for(const url of endpoints){
+          try{
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), 12000);
+            const res = await fetch(url, { signal: controller.signal, cache:'no-store' });
+            clearTimeout(timer);
+            if(!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if(!data.data || !data.data.length) throw new Error('no verses');
+            verses = data.data.map(v => ({ verse: v.verseNum, text: v.verse }));
+            try{ localStorage.setItem(cacheKey, JSON.stringify(verses)); }catch(_e){}
+            break;
+          }catch(err){ lastError = err; }
+        }
+        if(!verses.length) throw (lastError || new Error('no verses'));
+      }
       translationName = currentLang === 'om' ? 'Macaafa Qulqulluu Afaan Oromoo' : 'መጽሐፍ ቅዱስ አማርኛ';
     } else {
-      const cacheKey = `bible-cache-v1-kjv-${bookEn}-${chapter}`;
-      let data = null;
-      try {
-        const saved = localStorage.getItem(cacheKey);
-        if(saved) data = JSON.parse(saved);
-      } catch(e) {}
-
-      if(!data){
-        const res = await fetch(`https://bible-api.com/${encodeURIComponent(bookEn)}+${chapter}?translation=kjv`);
-        if(!res.ok) throw new Error('fail');
-        data = await res.json();
-        try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch(e) {}
-      }
-
+      const res = await fetch(`https://bible-api.com/${encodeURIComponent(bookEn)}+${chapter}?translation=kjv`);
+      if(!res.ok) throw new Error('fail');
+      const data = await res.json();
       if(!data.verses || !data.verses.length) throw new Error('no verses');
       verses = data.verses.map(v => ({ verse: v.verse, text: v.text }));
       reference = data.reference || displayTitle;
       translationName = 'King James Version';
     }
-
     const html = `
       ${translationName ? `<p class="center muted tiny" style="margin-bottom:14px">${esc(translationName)}</p>` : ''}
       ${verses.map(v => `<p><sup>${esc(v.verse)}</sup> ${esc(v.text)}</p>`).join('')}
     `;
     showBibleModal(reference, html);
   } catch(e) {
+    console.error('Bible chapter load failed:', e);
     showBibleModal(displayTitle,
       `<div class="center" style="padding:30px 0">
         <p class="muted" style="font-size:34px">📖</p>
         <p class="small muted" style="margin-top:12px">
-          This chapter is not downloaded yet.<br>
-          Connect to the internet once, open this chapter, and it will be saved on this device for offline reading.
+          Could not load this chapter right now.<br>
+          Please connect to the internet once to load the ${currentLang === 'om' ? 'Afaan Oromoo' : currentLang === 'am' ? 'Amharic' : 'Bible'} verses. Future readings are cached on this device.
         </p>
       </div>`);
   }
 }
-
 function logReading(){
   const u = currentUser(); if(!u) return;
   const book = document.getElementById('rd-book').value;
   const chapters = document.getElementById('rd-chapters').value.trim();
   const note = document.getElementById('rd-note').value.trim();
   if(!chapters){ ui.readMsg = {type:'err', text:'Please enter the chapter(s) you read.'}; return render(); }
-  state.readings.unshift({ id: uid(), userId: u.id, book, chapters, note, date: now() });
+  const r = { id: uid(), userId: u.id, book, chapters, note, date: now() };
+  fbWrite('readings/' + r.id, r);
   if(note){
-    state.notes.unshift({ id: uid(), userId: u.id, text: `${book} ${chapters} — ${note}`, date: now() });
+    const n = { id: uid(), userId: u.id, text: `${book} ${chapters} — ${note}`, date: now() };
+    fbWrite('notes/' + n.id, n);
   }
   notify(u.id, `${u.fullName} finished reading ${book} ${chapters}`, 'reading');
-  save(); ui.readMsg = {type:'ok', text:`Logged!`}; render();
+  ui.readMsg = {type:'ok', text:`Logged!`}; render();
 }
 function delReading(id){
   const r = state.readings.find(x => x.id === id); if(!r) return;
   showConfirm('Delete Reading Entry', `Delete your reading of "${r.book} ${r.chapters}"?`, () => {
-    state.readings = state.readings.filter(x => x.id !== id); save(); render();
+    fbRemove('readings/' + id);
   }, 'Delete');
 }
 
@@ -2171,10 +1913,11 @@ function uploadDoc(input){
   const u = currentUser(); const f = pendingFile;
   const reader = new FileReader();
   reader.onload = () => {
-    state.documents.unshift({ id: uid(), name: f.name, type: f.type || 'application/octet-stream',
-      size: f.size, data: reader.result, uploadedBy: u ? u.id : null, date: now() });
+    const doc = { id: uid(), name: f.name, type: f.type || 'application/octet-stream',
+      size: f.size, data: reader.result, uploadedBy: u ? u.id : null, date: now() };
+    fbWrite('documents/' + doc.id, doc);
     notify(u ? u.id : null, `${u ? u.fullName : 'Someone'} uploaded "${f.name}"`, 'document');
-    save(); pendingFile = null;
+    pendingFile = null;
     ui.docMsg = {type:'ok', text:`"${shortName(f.name, 40)}" uploaded successfully.`};
     render();
   };
@@ -2241,7 +1984,7 @@ function previewDoc(id){
 function delDoc(id){
   const d = state.documents.find(x => x.id === id); if(!d) return;
   showConfirm('Delete Document', `Delete "${shortName(d.name, 40)}"?`, () => {
-    state.documents = state.documents.filter(x => x.id !== id); save(); render();
+    fbRemove('documents/' + id);
   }, 'Delete');
 }
 
@@ -2343,39 +2086,37 @@ function deleteSelectedNotifs(){
   const ids = Object.keys(ui.notifSelected).filter(k => ui.notifSelected[k]);
   if(!ids.length) return;
   showConfirm('Delete Notifications', `Delete ${ids.length} selected?`, () => {
-    const setIds = {}; ids.forEach(id => { setIds[id] = true; });
-    state.notifications = state.notifications.filter(n => !setIds[n.id]);
+    ids.forEach(id => fbRemove('notifications/' + id));
     ui.notifSelected = {}; ui.notifSelectMode = false;
-    save(); render();
   }, 'Delete');
 }
 function approveFromNotif(notifId, requestId){
   const r = state.requests.find(x => x.id === requestId);
-  if(!r){ state.notifications = state.notifications.filter(n => n.id !== notifId); save(); render(); return; }
+  if(!r){ fbRemove('notifications/' + notifId); return; }
   const name = r.fullName;
   showConfirm('Approve Request', `Approve ${name}?`, () => {
-    state.users.push({ id: uid(), fullName: r.fullName, password: r.password,
-      role: 'member', approved: true, joined: now(), notifSeenAt: now(), photo: null });
-    state.requests = state.requests.filter(x => x.id !== requestId);
-    state.notifications = state.notifications.filter(n => n.id !== notifId);
+    const newUser = { id: uid(), fullName: r.fullName, password: r.password,
+      role: 'member', approved: true, joined: now(), notifSeenAt: now(), photo: null };
+    updateUser(newUser);
+    fbRemove('requests/' + requestId);
+    fbRemove('notifications/' + notifId);
     notify(null, `${name} was approved and joined`, 'approve');
-    save(); render();
   }, 'Accept');
 }
 function rejectFromNotif(notifId, requestId){
   const r = state.requests.find(x => x.id === requestId);
   const name = r ? r.fullName : 'this person';
   showConfirm('Reject Request', `Reject ${name}?`, () => {
-    state.requests = state.requests.filter(x => x.id !== requestId);
-    state.notifications = state.notifications.filter(n => n.id !== notifId);
+    fbRemove('requests/' + requestId);
+    fbRemove('notifications/' + notifId);
     notify(null, `Request from ${name} was rejected`, 'reject');
-    save(); render();
   }, 'Reject');
 }
 function clearNotifs(){
   const u = currentUser(); if(!u) return;
   showConfirm('Clear All', 'Clear all notifications for everyone?', () => {
-    state.notifications = []; u.notifSeenAt = now(); save(); render();
+    state.notifications.forEach(n => fbRemove('notifications/' + n.id));
+    u.notifSeenAt = now(); updateUser(u);
   }, 'Clear');
 }
 
@@ -2444,17 +2185,17 @@ function createGroup(){
   if(!u || u.role !== 'admin') return;
   const name = nextGroupName();
   const g = { id: uid(), name, memberIds: [], activities: [] };
-  state.groups.push(g);
+  fbWrite('groups/' + g.id, g);
   ui.folderOpen['group:' + g.id] = true;
   notify(u.id, `${u.fullName} created ${name}`, 'group');
-  save(); render();
+  render();
 }
 function deleteGroup(id){
   const u = currentUser();
   if(!u || u.role !== 'admin') return;
   const g = state.groups.find(x => x.id === id); if(!g) return;
   showConfirm('Delete Group', `Delete "${g.name}"? All activities, questions, and answers will be removed.`, () => {
-    state.groups = state.groups.filter(x => x.id !== id); save(); render();
+    fbRemove('groups/' + id);
   }, 'Delete');
 }
 function addActivity(groupId){
@@ -2466,8 +2207,9 @@ function addActivity(groupId){
   const a = { id: uid(), name, creatorId: u.id, createdAt: now(),
     sent: false, sentAt: null, targetGroupIds: [g.id], questions: [] };
   g.activities.push(a);
+  fbWrite('groups/' + groupId, g);
   ui.folderOpen['activity:' + g.id + ':' + a.id] = true;
-  save(); render();
+  render();
 }
 function deleteActivity(groupId, activityId){
   const u = currentUser();
@@ -2475,7 +2217,8 @@ function deleteActivity(groupId, activityId){
   const g = state.groups.find(x => x.id === groupId); if(!g) return;
   const a = g.activities.find(x => x.id === activityId); if(!a) return;
   showConfirm('Delete Activity', `Delete "${a.name}" and all its answers?`, () => {
-    g.activities = g.activities.filter(x => x.id !== activityId); save(); render();
+    g.activities = g.activities.filter(x => x.id !== activityId);
+    fbWrite('groups/' + groupId, g);
   }, 'Delete');
 }
 function toggleActivityTarget(groupId, activityId, targetGroupId){
@@ -2488,7 +2231,7 @@ function toggleActivityTarget(groupId, activityId, targetGroupId){
   const i = a.targetGroupIds.indexOf(targetGroupId);
   if(i > -1) a.targetGroupIds.splice(i, 1);
   else a.targetGroupIds.push(targetGroupId);
-  save(); render();
+  fbWrite('groups/' + groupId, g);
 }
 function addQuestion(groupId, activityId){
   const u = currentUser();
@@ -2498,11 +2241,11 @@ function addQuestion(groupId, activityId){
   if(a.sent){ alert('This activity was already sent.'); return; }
   a.questions = a.questions || [];
   a.questions.push({ id: uid(), text: '', answers: {} });
-  save(); render();
+  fbWrite('groups/' + groupId, g);
   setTimeout(() => {
     const inputs = document.querySelectorAll('.q-admin-box .q-input');
     if(inputs.length) inputs[inputs.length - 1].focus();
-  }, 0);
+  }, 150);
 }
 function deleteQuestion(groupId, activityId, questionId){
   const u = currentUser();
@@ -2511,7 +2254,8 @@ function deleteQuestion(groupId, activityId, questionId){
   const a = (g.activities || []).find(x => x.id === activityId); if(!a) return;
   if(a.sent) return;
   showConfirm('Delete Question', `Delete this question and all its answers?`, () => {
-    a.questions = (a.questions || []).filter(x => x.id !== questionId); save(); render();
+    a.questions = (a.questions || []).filter(x => x.id !== questionId);
+    fbWrite('groups/' + groupId, g);
   }, 'Delete');
 }
 function updateQuestion(groupId, activityId, questionId, text){
@@ -2521,7 +2265,8 @@ function updateQuestion(groupId, activityId, questionId, text){
   const a = (g.activities || []).find(x => x.id === activityId); if(!a) return;
   if(a.sent) return;
   const q = (a.questions || []).find(x => x.id === questionId); if(!q) return;
-  q.text = text; save();
+  q.text = text;
+  fbWrite('groups/' + groupId, g);
 }
 function sendActivity(groupId, activityId){
   const u = currentUser();
@@ -2542,9 +2287,9 @@ function sendActivity(groupId, activityId){
     () => {
       a.sent = true;
       a.sentAt = now();
+      fbWrite('groups/' + groupId, g);
       notify(u.id, `📤 ${u.fullName} sent "${a.name}" to ${targetNames}`, 'activity',
         { groupId, activityId });
-      save(); render();
     }, 'Send & Publish');
 }
 function saveAnswer(groupId, activityId, questionId){
@@ -2557,12 +2302,9 @@ function saveAnswer(groupId, activityId, questionId){
   if(!text){ alert('Please write an answer before saving.'); return; }
   q.answers = q.answers || {};
   q.answers[u.id] = { text, date: now() };
-  save();
-  ui.qMsg[q.id] = 'saved';
+  fbWrite('groups/' + groupId, g);
   ui.qOpen[q.id] = false;
   notify(u.id, `${u.fullName} answered a question in "${a.name}"`, 'answer', { groupId, activityId });
-  render();
-  setTimeout(() => { delete ui.qMsg[q.id]; }, 2500);
 }
 function deleteAnswer(groupId, activityId, questionId){
   const u = currentUser(); if(!u) return;
@@ -2570,7 +2312,8 @@ function deleteAnswer(groupId, activityId, questionId){
   const a = (g.activities || []).find(x => x.id === activityId); if(!a) return;
   const q = (a.questions || []).find(x => x.id === questionId); if(!q) return;
   showConfirm('Delete Answer', 'Remove your answer?', () => {
-    if(q.answers) delete q.answers[u.id]; save(); render();
+    if(q.answers) delete q.answers[u.id];
+    fbWrite('groups/' + groupId, g);
   }, 'Delete');
 }
 function toggleGroupMember(groupId, memberId){
@@ -2580,26 +2323,25 @@ function toggleGroupMember(groupId, memberId){
   g.memberIds = g.memberIds || [];
   const i = g.memberIds.indexOf(memberId);
   if(i > -1) g.memberIds.splice(i, 1); else g.memberIds.push(memberId);
-  save(); render();
+  fbWrite('groups/' + groupId, g);
 }
 function approveRequest(id){
   const r = state.requests.find(x => x.id === id); if(!r) return;
   showConfirm('Approve Request', `Approve ${r.fullName}?`, () => {
-    state.users.push({ id: uid(), fullName: r.fullName, password: r.password,
-      role: 'member', approved: true, joined: now(), notifSeenAt: now(), photo: null });
-    state.requests = state.requests.filter(x => x.id !== id);
-    state.notifications = state.notifications.filter(n => n.requestId !== id);
+    const newUser = { id: uid(), fullName: r.fullName, password: r.password,
+      role: 'member', approved: true, joined: now(), notifSeenAt: now(), photo: null };
+    updateUser(newUser);
+    fbRemove('requests/' + id);
+    state.notifications.filter(n => n.requestId === id).forEach(n => fbRemove('notifications/' + n.id));
     notify(null, `${r.fullName} was approved`, 'approve');
-    save(); render();
   }, 'Approve');
 }
 function rejectRequest(id){
   const r = state.requests.find(x => x.id === id); if(!r) return;
   showConfirm('Reject Request', `Reject ${r.fullName}?`, () => {
-    state.requests = state.requests.filter(x => x.id !== id);
-    state.notifications = state.notifications.filter(n => n.requestId !== id);
+    fbRemove('requests/' + id);
+    state.notifications.filter(n => n.requestId === id).forEach(n => fbRemove('notifications/' + n.id));
     notify(null, `Request from ${r.fullName} was rejected`, 'reject');
-    save(); render();
   }, 'Reject');
 }
 function removeMember(id){
@@ -2607,20 +2349,28 @@ function removeMember(id){
   if(!u || u.role !== 'admin') return;
   const m = state.users.find(x => x.id === id); if(!m) return;
   showConfirm('Remove Member', `Remove ${m.fullName}? Also deletes their readings and answers.`, () => {
-    state.users = state.users.filter(x => x.id !== id);
-    state.readings = state.readings.filter(r => r.userId !== id);
-    state.notes = state.notes.filter(n => n.userId !== id);
+    fbRemove('users/' + id);
+    state.readings.filter(r => r.userId === id).forEach(r => fbRemove('readings/' + r.id));
+    state.notes.filter(n => n.userId === id).forEach(n => fbRemove('notes/' + n.id));
     state.groups.forEach(g => {
-      g.memberIds = (g.memberIds || []).filter(mid => mid !== id);
+      let changed = false;
+      if((g.memberIds || []).includes(id)){
+        g.memberIds = g.memberIds.filter(mid => mid !== id);
+        changed = true;
+      }
       (g.activities || []).forEach(a => {
         (a.questions || []).forEach(q => {
-          if(q.answers && q.answers[id]) delete q.answers[id];
+          if(q.answers && q.answers[id]){ delete q.answers[id]; changed = true; }
         });
       });
+      if(changed) fbWrite('groups/' + g.id, g);
     });
-    save(); render();
   }, 'Remove');
 }
+
+/* ══════════════════════════════════════════════════════════════
+   RENDER + BOOTSTRAP
+   ══════════════════════════════════════════════════════════════ */
 function render(){
   const u = currentUser();
   document.getElementById('root').innerHTML = u ? renderApp(u) : renderAuth();
@@ -2630,16 +2380,80 @@ function render(){
     if(first && window.innerWidth > 700) first.focus();
   }
 }
-langObserver.observe(document.getElementById('root'), {childList:true, subtree:true, characterData:true});
-langObserver.observe(document.getElementById('modal-root'), {childList:true, subtree:true, characterData:true});
-render();
-</script>
+window.render = render;
+window.setLanguage = setLanguage;
+window.setAuthTab = setAuthTab;
+window.setTab = setTab;
+window.openMyProfile = openMyProfile;
+window.handlePhotoUpload = handlePhotoUpload;
+window.removeMyPhoto = removeMyPhoto;
+window.saveMyProfile = saveMyProfile;
+window.logoutFromProfile = logoutFromProfile;
+window.hideModal = hideModal;
+window.confirmAction = confirmAction;
+window.doLogin = doLogin;
+window.doSignup = doSignup;
+window.doChangePassword = doChangePassword;
+window.toggleFolder = toggleFolder;
+window.toggleQOpen = toggleQOpen;
+window.readChapter = readChapter;
+window.logReading = logReading;
+window.delReading = delReading;
+window.saveStandaloneNote = saveStandaloneNote;
+window.delNote = delNote;
+window.uploadDoc = uploadDoc;
+window.downloadDoc = downloadDoc;
+window.openDoc = openDoc;
+window.previewDoc = previewDoc;
+window.delDoc = delDoc;
+window.toggleNotifSelectMode = toggleNotifSelectMode;
+window.toggleNotifSelected = toggleNotifSelected;
+window.selectAllNotifs = selectAllNotifs;
+window.deleteSelectedNotifs = deleteSelectedNotifs;
+window.approveFromNotif = approveFromNotif;
+window.rejectFromNotif = rejectFromNotif;
+window.clearNotifs = clearNotifs;
+window.createGroup = createGroup;
+window.deleteGroup = deleteGroup;
+window.addActivity = addActivity;
+window.deleteActivity = deleteActivity;
+window.toggleActivityTarget = toggleActivityTarget;
+window.addQuestion = addQuestion;
+window.deleteQuestion = deleteQuestion;
+window.updateQuestion = updateQuestion;
+window.sendActivity = sendActivity;
+window.saveAnswer = saveAnswer;
+window.deleteAnswer = deleteAnswer;
+window.toggleGroupMember = toggleGroupMember;
+window.approveRequest = approveRequest;
+window.rejectRequest = rejectRequest;
+window.removeMember = removeMember;
 
-<script>
-if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+/* ── Bootstrap ── */
+function bootstrap(){
+  langObserver.observe(document.getElementById('root'), {childList:true, subtree:true, characterData:true});
+  langObserver.observe(document.getElementById('modal-root'), {childList:true, subtree:true, characterData:true});
+
+  onAuthStateChanged(fbAuth, user => {
+    if(user){
+      firebaseReady = true;
+      attachFirebaseListeners();
+      const lo = document.getElementById('loading-overlay');
+      if(lo) lo.remove();
+      showSyncBadge('✓ Connected');
+    }
+  });
+  signInAnonymously(fbAuth).catch(err => {
+    console.error('Auth failed:', err);
+    attachFirebaseListeners();
+    const lo = document.getElementById('loading-overlay');
+    if(lo) lo.remove();
+    showSyncBadge('⚠ Offline mode', true);
+  });
+
+  render();
 }
+bootstrap();
 </script>
-
 </body>
 </html>
