@@ -1,25 +1,10 @@
 {
   "name": "Bible Study Group",
-  "short_name": "BSG",
-  "description": "Read · Share · Grow together",
-  "start_url": "./Index.html",
-  "scope": "./",
+  "short_name": "Bible Study",
+  "start_url": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#fdfbf7",
+  "background_color": "#f8f9fb",
   "theme_color": "#dc2626",
-  "icons": [
-    {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='32' fill='%23dc2626'/%3E%3Ctext x='96' y='128' font-size='100' text-anchor='middle' fill='%23ffffff' font-family='Arial'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%23dc2626'/%3E%3Ctext x='256' y='340' font-size='280' text-anchor='middle' fill='%23ffffff' font-family='Arial'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "description": "Bible Study Group web application",
+  "icons": []
 }
